@@ -247,22 +247,19 @@
         </div>
     </section>
 
-    <!-- PDF Brochure Section -->
+    <!-- PDF Brochure Section (Read-Only Viewer, No Direct Download) -->
     <section id="brochure" class="max-w-4xl mx-auto px-6 py-12">
         <div class="glass-panel p-8 md:p-10 rounded-3xl border border-amber-500/30 text-center relative overflow-hidden">
             <span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold block mb-2">Architectural Blueprint & Catalog</span>
-            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text mb-4">Download Official Studio Brochure</h2>
+            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text mb-4">Official Studio Brochure</h2>
             <p class="text-xs text-gray-300 max-w-lg mx-auto mb-8 leading-relaxed">
-                Inspect complete architectural plans, structural detailing specifications, and comprehensive interior portfolios in high-resolution PDF format.
+                Explore architectural layouts, structural specifications, and executive commercial interiors directly inside our digital browser viewer.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="JAYPURIYA OP4_removed.pdf" target="_blank" 
-                   class="gold-gradient text-black font-extrabold px-8 py-3.5 rounded-full text-xs shadow-lg hover:opacity-90 transition">
-                    Preview PDF Brochure
-                </a>
-                <a href="JAYPURIYA OP4_removed.pdf" download 
-                   class="glass-panel text-amber-300 font-bold px-8 py-3.5 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition">
-                    Download PDF File
+            <div class="flex justify-center">
+                <a href="https://docs.google.com/viewer?url=https://aura-site-ebon.vercel.app/JAYPURIYA%20OP4_removed.pdf&embedded=true" 
+                   target="_blank" 
+                   class="gold-gradient text-black font-extrabold px-10 py-3.5 rounded-full text-xs md:text-sm shadow-xl hover:opacity-90 transition">
+                    👁 View Studio Brochure (Read Only)
                 </a>
             </div>
         </div>
@@ -272,7 +269,7 @@
     <section id="consult" class="max-w-xl mx-auto px-6 py-16">
         <div class="glass-panel p-8 md:p-10 rounded-3xl border border-amber-500/30">
             <h2 class="font-luxury text-2xl md:text-3xl font-bold text-center gold-text mb-2">Project Consultation</h2>
-            <p class="text-xs text-center text-gray-400 mb-8">Submit your plot or built-up area parameters to initiate a consultation directly on WhatsApp.</p>
+            <p class="text-xs text-center text-gray-400 mb-8">Submit your plot or built-up area parameters to send an instant inquiry to our official WhatsApp.</p>
 
             <form id="contactForm" class="space-y-4">
                 <div>
@@ -287,4 +284,4 @@
                 </div>
                 <div>
                     <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Required Architectural Service</label>
-            
+                    <select id="custReq" class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:out
