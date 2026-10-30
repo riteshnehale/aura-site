@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Architectural Studio & Structural Engineering</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f17; color: #f3f4f6; }
+        .font-luxury { font-family: 'Cinzel', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); }
+        .gold-text { background: linear-gradient(135deg, #d4af37, #f3e5ab); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(22, 27, 34, 0.75); backdrop-filter: blur(14px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .tab-active { background: linear-gradient(135deg, #d4af37, #aa771c); color: #000; font-weight: 600; }
+    </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+    <!-- Header Navbar -->
+    <nav class="fixed w-full z-50 glass-card px-6 py-4 flex justify-between items-center border-b border-neutral-800">
+        <span class="font-luxury text-lg md:text-xl font-bold tracking-widest gold-text">AURA STUDIO</span>
+        <a href="#consult" class="text-xs uppercase tracking-wider px-4 py-2 border border-amber-500/50 rounded-full text-amber-300 hover:bg-amber-500 hover:text-black transition">
+            सल्ला घ्या
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-14 px-6 text-center max-w-3xl mx-auto">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-3 block">Architectural • Structural • Interior</span>
+        <h1 class="font-luxury text-3xl md:text-5xl font-bold leading-tight mb-5">
+            तुमच्या स्वप्नातील घराची <br><span class="gold-text">अचूक व आधुनिक रचना.</span>
+        </h1>
+        <p class="text-gray-400 text-xs md:text-sm max-w-xl mx-auto mb-8">
+            ३D एलिव्हेशन, मजबूत RCC स्ट्रक्चरल प्लॅनिंग आणि आधुनिक इंटेरियर डिझाइन — सर्वकाही थेट प्रमाणित इंजिनिअरकडून.
+        </p>
+        <div class="flex justify-center gap-3">
+            <a href="#projects" class="gold-gradient text-black font-semibold px-6 py-3 rounded-full text-xs shadow-lg transition">प्रकल्प पहा</a>
+            <a href="#consult" class="glass-card text-amber-300 font-semibold px-6 py-3 rounded-full text-xs border border-amber-500/40 transition">प्लॅन हवा आहे?</a>
+        </div>
+    </header>
+
+    <!-- Work Process Section -->
+    <section class="max-w-5xl mx-auto px-6 py-10">
+        <h2 class="font-luxury text-xl font-bold text-center mb-8 gold-text">कामाची पद्धत (How It Works)</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="glass-card p-4 rounded-xl">
+                <div class="w-8 h-8 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-2 text-xs">1</div>
+                <h3 class="font-semibold text-white text-xs mb-1">प्लॉट समजून घेणे</h3>
+                <p class="text-[10px] text-gray-400">प्लॉट साईझ आणि वास्तूनुसार गरजा नोंदवणे.</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <div class="w-8 h-8 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-2 text-xs">2</div>
+                <h3 class="font-semibold text-white text-xs mb-1">२D फ्लोअर प्लॅन</h3>
+                <p class="text-[10px] text-gray-400">खोलींची अचूक मापे व हवेशीर डिझाइन.</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <div class="w-8 h-8 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-2 text-xs">3</div>
+                <h3 class="font-semibold text-white text-xs mb-1">३D व इंटेरियर</h3>
+                <p class="text-[10px] text-gray-400">घर बाहेरून व आतून कसे दिसेल याचे मॉडेल.</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <div class="w-8 h-8 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-2 text-xs">4</div>
+                <h3 class="font-semibold text-white text-xs mb-1">RCC स्ट्रक्चर प्लॅन</h3>
+                <p class="text-[10px] text-gray-400">कॉलम, बीम आणि लोखंडाचा पक्का नकाशा.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="text-center mb-6">
+            <h2 class="font-luxury text-2xl font-bold gold-text">आमचे पूर्ण झालेले डिझाइन्स</h2>
+            <p class="text-xs text-gray-400 mt-1">तपशील पाहण्यासाठी फोटोवर क्लिक करा</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button onclick="filterItems('all')" class="filter-btn tab-active px-4 py-1.5 rounded-full text-xs" data-filter="all">सर्व (All)</button>
+            <button onclick="filterItems('elevation')" class="filter-btn glass-card text-gray-300 px-4 py-1.5 rounded-full text-xs" data-filter="elevation">३D एलिव्हेशन</button>
+            <button onclick="filterItems('structure')" class="filter-btn glass-card text-gray-300 px-4 py-1.5 rounded-full text-xs" data-filter="structure">स्ट्रक्चरल (RCC)</button>
+            <button onclick="filterItems('interior')" class="filter-btn glass-card text-gray-300 px-4 py-1.5 rounded-full text-xs" data-filter="interior">इंटेरियर डिझाइन</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- फोटो १: ३D एलिव्हेशन -->
+            <div class="proj-card elevation glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('लक्झरी मॉडर्न व्हिला ३D', '३D एलिव्हेशन', 'प्रीमियम व्हिला डिझाइन - वूडन फिनिश, पॅरापेट आणि मॉडर्न लायटिंग.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">3D Elevation</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">मॉडर्न रेसिडेन्शियल बंगलो</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+            <!-- फोटो २: स्ट्रक्चरल प्लॅनिंग -->
+            <div class="proj-card structure glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('RCC कॉलम व बीम प्लॅनिंग', 'स्ट्रक्चरल इंजिनिअरिंग', 'भूकंपरोधक स्ट्रक्चरल डिझाइन, कॉलम लेआउट आणि पाया (Footing) चे तपशील.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">RCC Structure</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">अर्थक्वेक रेझिस्टंट फ्रेम प्लॅन</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+            <!-- फोटो ३: इंटेरियर डिझाइन -->
+            <div class="proj-card interior glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('लिव्हिंग रूम व मॉड्यूलर किचन', 'इंटेरियर आर्किटेक्चर', 'हॉल, टीव्ही युनिट, फॉल सीलिंग आणि ॲक्रेलिक किचन डिझाइन.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">Interior</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">प्रीमियम लिव्हिंग व किचन स्पेस</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+            <!-- फोटो ४: ३D एलिव्हेशन २ -->
+            <div class="proj-card elevation glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('रो-हाउस व कमर्शियल डिझाइन', '३D आर्किटेक्चर', 'कमी जागेत सर्वोत्तम दुकाने व वर राहण्यासाठी सुंदर रो-हाउस प्लॅन.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">3D Elevation</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">कंटेम्पररी रो-हाउस डिझाइन</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+            <!-- फोटो ५: बेडरूम इंटेरियर -->
+            <div class="proj-card interior glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('मास्टर बेडरूम इंटेरियर', 'इंटेरियर डिझाइन', 'वॉर्डरोब स्पेस, वॉर्म लायटिंग आणि बेड बॅकड्रॉप रचना.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">Interior</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">मास्टर बेडरूम डिझाइन</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+            <!-- फोटो ६: स्टील व फाऊंडेशन -->
+            <div class="proj-card structure glass-card rounded-2xl overflow-hidden cursor-pointer" 
+                 onclick="showDetail('स्लॅब व फाउंडेशन स्टील शेड्युल', 'स्ट्रक्चरल ड्रॉइंग', 'लोखंडाची (TMT Steel) बचत आणि मजबूत बांधकामाचा इंजिनिअरिंग आराखडा.', this.querySelector('img').src)">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-black/70 border border-amber-500/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full">RCC Structure</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">स्टील रिइन्फोर्समेंट शेड्युल</h3>
+                    <p class="text-[11px] text-gray-400 mt-1">क्लिक करा &rarr;</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Consultation Contact Form -->
+    <section id="consult" class="max-w-md mx-auto px-6 py-14">
+        <div class="glass-card p-6 rounded-3xl border border-amber-500/30">
+            <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">प्रकल्प चर्चा व सल्ला</h2>
+            <p class="text-[11px] text-center text-gray-400 mb-5">माहिती भरा, आम्ही थेट फोनवर बोलून मार्गदर्शन करू.</p>
+
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] text-gray-300 uppercase font-semibold mb-1">नाव व गाव</label>
+                    <input type="text" id="custName" placeholder="उदा. अमोल - पाचोड / पैठण" required
+                           class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div>
+                    <label class="block text-[11px] text-gray-300 uppercase font-semibold mb-1">प्लॉट साईझ (Plot Size)</label>
+                    <input type="text" id="custPlot" placeholder="उदा. 30 x 50 (1500 sq.ft)" required
+                           class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div>
+                    <label class="block text-[11px] text-gray-300 uppercase font-semibold mb-1">कोणती सेवा हवी आहे?</label>
+                    <select id="custReq" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+                        <option value="नवीन घराचा ३D नकाशा व एलिव्हेशन">नवीन घराचा ३D नकाशा व एलिव्हेशन</option>
+                        <option value="RCC स्ट्रक्चरल प्लॅन (कॉलम/लोखंड)">RCC स्ट्रक्चरल प्लॅन (कॉलम/लोखंड)</option>
+                        <option value="हॉल, किचन, बेडरूम इंटेरियर">हॉल, किचन, बेडरूम इंटेरियर</option>
+                        <option value="संपूर्ण प्रोजेक्ट मार्गदर्शन">संपूर्ण प्रोजेक्ट मार्गदर्शन</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full gold-gradient text-black font-bold py-3 rounded-xl shadow-lg text-xs mt-3">
+                    WhatsApp वर चर्चा सुरू करा
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Project Fullscreen Modal -->
+    <div id="fullModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-xl w-full rounded-2xl overflow-hidden border border-amber-500/30 relative">
+            <button onclick="closeDetail()" class="absolute top-3 right-3 bg-neutral-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs">✕</button>
+            <img id="mImg" src="" class="w-full h-64 object-cover">
+            <div class="p-5">
+                <span id="mCat" class="text-[10px] text-amber-400 font-bold uppercase tracking-wider"></span>
+                <h3 id="mTitle" class="text-base font-bold text-white mt-1 mb-2"></h3>
+                <p id="mDesc" class="text-xs text-gray-300 leading-relaxed mb-4"></p>
+                <a href="#consult" onclick="closeDetail()" class="gold-gradient text-black text-xs font-bold px-5 py-2 rounded-full inline-block">
+                    या डिझाइनसाठी संपर्क करा
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-6 text-[10px] text-gray-500 border-t border-neutral-900">
+        &copy; Aura Architectural & Structural Studio • Chhatrapati Sambhajinagar
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // १. फिल्टर लॉजिक
+        function filterItems(type) {
+            const cards = document.querySelectorAll('.proj-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(b => {
+                if(b.getAttribute('data-filter') === type) {
+                    b.className = "filter-btn tab-active px-4 py-1.5 rounded-full text-xs";
+                } else {
+                    b.className = "filter-btn glass-card text-gray-300 px-4 py-1.5 rounded-full text-xs";
+                }
+            });
+
+            cards.forEach(c => {
+                if(type === 'all' || c.classList.contains(type)) {
+                    c.style.display = 'block';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        // २. फोटोवर क्लिक केल्यावर पॉपअप
+        function showDetail(title, category, desc, src) {
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mCat').innerText = category;
+            document.getElementById('mDesc').innerText = desc;
+            document.getElementById('mImg').src = src;
+            document.getElementById('fullModal').classList.remove('hidden');
+        }
+
+        function closeDetail() {
+            document.getElementById('fullModal').classList.add('hidden');
+        }
+
+        // ३. WhatsApp वर डेटा पाठवणे
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const plot = document.getElementById('custPlot').value;
+            const req = document.getElementById('custReq').value;
+
+            // 👇👇 इथे तुमचा स्वतःचा १० अंकी WhatsApp नंबर टाका (उदा. 919876543210)
+            const myWhatsAppNumber = "919999999999"; 
+
+            const text = `*नवीन आर्किटेक्चर/स्ट्रक्चरल इन्क्वायरी*%0A%0A` +
+                         `👤 *नाव/गाव:* ${name}%0A` +
+                         `📐 *प्लॉट साईझ:* ${plot}%0A` +
+                         `📋 *आवश्यकता:* ${req}%0A%0A` +
+                         `कृपया डिझाइन आणि सल्ला देण्यासाठी संपर्क करावा.`;
+
+            window.open(`https://wa.me/${myWhatsAppNumber}?text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
