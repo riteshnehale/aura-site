@@ -257,7 +257,7 @@
         </div>
     </section>
 
-    <!-- 100% DIRECT WORKING WHATSAPP FORM -->
+    <!-- 100% RELIABLE DIRECT LINK WHATSAPP INQUIRY FORM -->
     <section id="consult-box" class="max-w-xl mx-auto px-4 pt-6 pb-48 relative z-20">
         <div class="bg-slate-900 border-4 border-amber-400 p-6 sm:p-8 rounded-3xl shadow-2xl block">
             <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Instant Project Consultation</h2>
@@ -265,30 +265,31 @@
                 Fill details & tap the gold button to chat directly on WhatsApp with Ritesh Nehale.
             </p>
 
-            <form id="whatsappDirectForm" onsubmit="sendViaDirectWhatsApp(event)" class="space-y-4 block">
+            <div class="space-y-4 block">
                 <div>
                     <label class="block text-xs text-amber-300 font-bold mb-1">1. FULL NAME & LOCATION / CITY</label>
-                    <input type="text" id="custName" placeholder="e.g. Ritesh Nehale Pachod" required
+                    <input type="text" id="custName" oninput="updateWhatsAppLink()" placeholder="e.g. Ritesh Nehale Pachod" 
                            class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
                 </div>
 
                 <div>
                     <label class="block text-xs text-amber-300 font-bold mb-1">2. MOBILE / WHATSAPP NUMBER</label>
-                    <input type="tel" id="custPhone" placeholder="e.g. 7755958849" required
+                    <input type="tel" id="custPhone" oninput="updateWhatsAppLink()" placeholder="e.g. 7755958849" 
                            class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
                 </div>
 
-                <!-- DIRECT SUBMIT BUTTON -->
+                <!-- DIRECT ANCHOR LINK (100% BROWSER BLOCK-FREE) -->
                 <div class="py-2">
-                    <button type="submit" 
-                            class="w-full gold-gradient py-4 rounded-xl shadow-2xl text-sm font-black uppercase tracking-wider block text-center cursor-pointer border-2 border-white active:scale-95 transition">
+                    <a id="mainWhatsAppBtn" 
+                       href="https://wa.me/918668850065?text=Hello%20Ritesh%2C%20I%20am%20interested%20in%20architectural%20consultation%20from%20Aura%20Studio."
+                       class="w-full gold-gradient py-4 rounded-xl shadow-2xl text-sm font-black uppercase tracking-wider block text-center cursor-pointer border-2 border-white active:scale-95 transition">
                         🚀 SEND WHATSAPP INQUIRY NOW
-                    </button>
+                    </a>
                 </div>
 
                 <div>
                     <label class="block text-xs text-amber-300 font-bold mb-1">3. REQUESTED SERVICE (OPTIONAL)</label>
-                    <select id="custService" 
+                    <select id="custService" onchange="updateWhatsAppLink()"
                             class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
                         <option value="1. Architectural Planning & 2D Vastu Floor Plan">1. Architectural Planning & 2D Vastu Floor Plan</option>
                         <option value="2. 3D Exterior Elevation & Rendering">2. 3D Exterior Elevation & Rendering</option>
@@ -300,7 +301,7 @@
                         <option value="Complete Turnkey Architectural Solutions">Complete Turnkey Architectural Solutions</option>
                     </select>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 
@@ -314,19 +315,12 @@
         </a>
     </div>
 
-    <!-- UNIVERSAL DIRECT WHATSAPP SCRIPT -->
+    <!-- DIRECT LINK UPDATER SCRIPT -->
     <script>
-        function sendViaDirectWhatsApp(e) {
-            e.preventDefault();
-            
-            var name = document.getElementById('custName').value.trim();
-            var phone = document.getElementById('custPhone').value.trim();
+        function updateWhatsAppLink() {
+            var name = document.getElementById('custName').value.trim() || 'Client';
+            var phone = document.getElementById('custPhone').value.trim() || 'Not Provided';
             var service = document.getElementById('custService').value;
 
-            if (!name || !phone) {
-                alert("Kripya apna Naam aur Mobile number enter karein.");
-                return false;
-            }
-
-            var text = "*New Architectural Project Inquiry - Aura Studio*\n\n" +
-                       "👤 *Client Name:* " + name + "\n
+            var msg = "*New Architectural Project Inquiry - Aura Studio*\n\n" +
+                      "👤 *Client 
