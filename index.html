@@ -2,11 +2,11 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AURA Architectural Studio & Structural Planners</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Luxury Serif & Sans Fonts -->
+    <!-- Luxury Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,16 +33,11 @@
             -webkit-text-fill-color: transparent; 
         }
         .glass-panel { 
-            background: rgba(10, 16, 28, 0.76); 
+            background: rgba(10, 16, 28, 0.82); 
             backdrop-filter: blur(20px); 
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.28); 
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-panel:hover { 
-            border-color: rgba(212, 175, 55, 0.7); 
-            transform: translateY(-2px);
+            border: 1px solid rgba(212, 175, 55, 0.32); 
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
         }
         .tab-active { 
             background: linear-gradient(135deg, #d4af37, #aa771c); 
@@ -50,40 +45,37 @@
             font-weight: 800; 
         }
 
-        /* Continuous Kinetic Rotating & Zooming Background Flow */
+        /* Kinetic Background Motion */
         @keyframes orbitZoom1 {
-            0% { transform: scale(1.05) translate(0px, 0px) rotate(0deg); opacity: 0.42; filter: blur(0px); }
-            33% { transform: scale(1.18) translate(25px, -20px) rotate(2.5deg); opacity: 0.65; filter: blur(1px); }
-            66% { transform: scale(1.12) translate(-20px, 20px) rotate(-2deg); opacity: 0.45; filter: blur(0px); }
-            100% { transform: scale(1.05) translate(0px, 0px) rotate(0deg); opacity: 0.42; filter: blur(0px); }
+            0% { transform: scale(1.05) translate(0px, 0px); opacity: 0.42; }
+            50% { transform: scale(1.15) translate(20px, -20px); opacity: 0.6; }
+            100% { transform: scale(1.05) translate(0px, 0px); opacity: 0.42; }
         }
         @keyframes orbitZoom2 {
-            0% { transform: scale(1.14) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
-            33% { transform: scale(1.06) translate(-25px, 20px) rotate(-2.5deg); opacity: 0.55; }
-            66% { transform: scale(1.20) translate(20px, -20px) rotate(2deg); opacity: 0.35; }
-            100% { transform: scale(1.14) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
+            0% { transform: scale(1.12) translate(0px, 0px); opacity: 0.35; }
+            50% { transform: scale(1.05) translate(-20px, 20px); opacity: 0.55; }
+            100% { transform: scale(1.12) translate(0px, 0px); opacity: 0.35; }
         }
         .flow-layer-1 {
-            animation: orbitZoom1 26s ease-in-out infinite alternate;
+            animation: orbitZoom1 24s ease-in-out infinite alternate;
         }
         .flow-layer-2 {
-            animation: orbitZoom2 30s ease-in-out infinite alternate;
+            animation: orbitZoom2 28s ease-in-out infinite alternate;
         }
     </style>
 </head>
-<body class="selection:bg-amber-400 selection:text-black pb-28 relative">
+<body class="selection:bg-amber-400 selection:text-black pb-32 relative">
 
     <!-- CONTINUOUS KINETIC BACKGROUND FLOW -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <img src="1.png" class="absolute inset-0 w-full h-full object-cover flow-layer-1" alt="Interior Architecture 1">
         <img src="4.png" class="absolute inset-0 w-full h-full object-cover flow-layer-2 mix-blend-screen opacity-55" alt="Interior Architecture 2">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#020408]/65 via-[#020408]/80 to-[#020408]/92"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#020408]/65 via-[#020408]/82 to-[#020408]/95"></div>
     </div>
 
     <!-- Top Luxury Navigation Bar -->
     <nav class="fixed w-full top-0 z-40 glass-panel px-5 py-3.5 flex justify-between items-center border-b border-amber-500/25">
         <div class="flex items-center gap-3">
-            <!-- Studio Monogram Logo -->
             <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-luxury font-black text-black text-base shadow-lg border border-amber-300/40">
                 A
             </div>
@@ -96,7 +88,7 @@
             <a href="tel:+918668850065" class="bg-amber-500/10 border border-amber-400/50 text-amber-300 text-xs px-3.5 py-1.5 rounded-full font-semibold flex items-center gap-1 hover:bg-amber-400 hover:text-black transition">
                 📞 <span>Call Desk</span>
             </a>
-            <a href="#consult" class="gold-gradient text-black text-xs px-4 py-1.5 rounded-full font-extrabold flex items-center gap-1 hover:opacity-90 transition shadow-lg">
+            <a href="#consult-section" class="gold-gradient text-black text-xs px-4 py-1.5 rounded-full font-extrabold flex items-center gap-1 hover:opacity-90 transition shadow-lg">
                 ⚡ <span>Inquire</span>
             </a>
         </div>
@@ -111,23 +103,22 @@
             Precision Engineering Meets <br><span class="gold-text">Bespoke Architectural Luxury.</span>
         </h1>
         <p class="text-gray-200 text-xs md:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed drop-shadow">
-            Certified residential floor planning, high-end commercial hospitality interiors, and certified RCC blueprints. Inspect every catalog module below.
+            Certified residential floor planning, high-end commercial hospitality interiors, and certified RCC blueprints. Tap any design below to view high-resolution blueprints in full screen.
         </p>
 
-        <!-- Fast Action Direct Buttons -->
         <div class="flex flex-wrap justify-center gap-3">
-            <button type="button" onclick="openModuleModal('30 x 60 Vastu Master Ground Floor Plan', '2D Residential Drafting & Vastu Layout', 'Vastu-compliant residential master plan with dual self-contained units, central staircase access, kitchen zoning, and approach road alignment.', 'Architectural Ground Floor Plan with Road Context.png')" 
-                    class="gold-gradient text-black font-extrabold px-7 py-3 rounded-full text-xs shadow-xl hover:opacity-90 transition flex items-center gap-2 cursor-pointer">
-                📐 <span>Inspect 2D Master Blueprint</span>
+            <button type="button" onclick="openZoomImage('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Vastu Master Ground Floor Plan', '2D Residential Drafting & Vastu Layout')" 
+                    class="gold-gradient text-black font-extrabold px-7 py-3.5 rounded-full text-xs shadow-xl hover:opacity-90 transition flex items-center gap-2 cursor-pointer">
+                📐 <span>Inspect 2D Master Blueprint (Full Screen)</span>
             </button>
-            <a href="tel:+918668850065" class="glass-panel text-amber-300 font-bold px-7 py-3 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition flex items-center gap-2">
-                📞 <span>Helpline: +91 8668850065</span>
+            <a href="tel:+918668850065" class="glass-panel text-amber-300 font-bold px-7 py-3.5 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition flex items-center gap-2">
+                📞 <span>Direct Helpline: +91 8668850065</span>
             </a>
         </div>
     </header>
 
     <!-- Leadership Section -->
-    <section class="max-w-5xl mx-auto px-6 py-8 relative z-10">
+    <section class="max-w-5xl mx-auto px-6 py-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Ar. Vaishnavi Huljute -->
             <div class="glass-panel p-7 rounded-3xl text-center relative">
@@ -141,7 +132,7 @@
                 </div>
             </div>
 
-            <!-- Ritesh Nehale (Client Relations & Coordination Head) -->
+            <!-- Ritesh Nehale -->
             <div class="glass-panel p-7 rounded-3xl text-center relative border-amber-500/40">
                 <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md font-luxury">RN</div>
                 <h3 class="font-bold text-white text-base">Ritesh Nehale</h3>
@@ -155,11 +146,11 @@
         </div>
     </section>
 
-    <!-- ARCHITECTURAL & INTERIOR SHOWCASE (INDIVIDUAL FRAMES) -->
+    <!-- ARCHITECTURAL & INTERIOR MODULES (INDIVIDUAL ZOOMABLE CARDS) -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-10 relative z-10">
         <div class="text-center mb-8">
             <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Architectural & Interior Showcase</h2>
-            <p class="text-xs text-gray-300 mt-1">Tap any frame or button below to inspect high-resolution designs in full screen</p>
+            <p class="text-xs text-gray-300 mt-1">Tap on any image or 'View Details' button to open full-screen zoomable view</p>
         </div>
 
         <!-- Filter Tabs -->
@@ -176,17 +167,17 @@
             <!-- FRAME 1: 30x60 Floor Plan -->
             <div class="proj-card plan glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
                 <div class="h-64 overflow-hidden relative bg-black/50 cursor-pointer" 
-                     onclick="openModuleModal('30 x 60 Architectural Vastu Plan', '2D Residential Drafting & Vastu Layout', 'Master residential layout aligned with cardinal Vastu orientations. Features dual private residences, central circulation corridor, open kitchens, and road approach alignment.', 'Architectural Ground Floor Plan with Road Context.png')">
+                     onclick="openZoomImage('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Architectural Vastu Plan', 'Vastu-compliant residential master plan with dual self-contained units, central staircase access, kitchen zoning, and approach road alignment.')">
                     <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Vastu Plan" class="w-full h-full object-contain p-2 hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/85 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2D Blueprint</span>
+                    <span class="absolute top-3 left-3 bg-black/85 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tap to Zoom</span>
                 </div>
                 <div class="p-5">
                     <h3 class="font-bold text-white text-base">30 x 60 Master Vastu Plan</h3>
                     <p class="text-xs text-gray-300 mt-1">Full ground floor layout with road context</p>
                     <button type="button" 
-                            onclick="openModuleModal('30 x 60 Architectural Vastu Plan', '2D Residential Drafting & Vastu Layout', 'Master residential layout aligned with cardinal Vastu orientations. Features dual private residences, central circulation corridor, open kitchens, and road approach alignment.', 'Architectural Ground Floor Plan with Road Context.png')" 
+                            onclick="openZoomImage('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Architectural Vastu Plan', 'Vastu-compliant residential master plan with dual self-contained units, central staircase access, kitchen zoning, and approach road alignment.')" 
                             class="mt-4 w-full gold-gradient text-black text-xs font-bold py-3 rounded-xl cursor-pointer shadow-md hover:opacity-90 transition">
-                        👁 View Details
+                        👁 View Details (Full Screen)
                     </button>
                 </div>
             </div>
@@ -194,17 +185,17 @@
             <!-- FRAME 2: Fine Dining Space (1.png) -->
             <div class="proj-card dining glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
                 <div class="h-64 overflow-hidden relative cursor-pointer"
-                     onclick="openModuleModal('Fine Dining Space & Banquette Seating', 'Luxury Hospitality Interior', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.', '1.png')">
+                     onclick="openZoomImage('1.png', 'Fine Dining Space & Banquette Seating', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.')">
                     <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Hospitality</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
                 </div>
                 <div class="p-5">
                     <h3 class="font-bold text-white text-base">Fine Dining Space</h3>
                     <p class="text-xs text-gray-300 mt-1">Wooden slatted ceiling & luxury seating</p>
                     <button type="button" 
-                            onclick="openModuleModal('Fine Dining Space & Banquette Seating', 'Luxury Hospitality Interior', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.', '1.png')" 
+                            onclick="openZoomImage('1.png', 'Fine Dining Space & Banquette Seating', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.')" 
                             class="mt-4 w-full gold-gradient text-black text-xs font-bold py-3 rounded-xl cursor-pointer shadow-md hover:opacity-90 transition">
-                        👁 View Details
+                        👁 View Details (Full Screen)
                     </button>
                 </div>
             </div>
@@ -212,17 +203,17 @@
             <!-- FRAME 3: Hotel Reception (2.png) -->
             <div class="proj-card dining glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
                 <div class="h-64 overflow-hidden relative cursor-pointer"
-                     onclick="openModuleModal('Hotel Reception & Executive Dining', 'Commercial Hospitality', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.', '2.png')">
+                     onclick="openZoomImage('2.png', 'Hotel Reception & Executive Dining', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.')">
                     <img src="2.png" alt="Hotel Reception" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Lounge & Reception</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
                 </div>
                 <div class="p-5">
                     <h3 class="font-bold text-white text-base">Hotel Reception & Lounge</h3>
                     <p class="text-xs text-gray-300 mt-1">Signature branding wall & dining ergonomics</p>
                     <button type="button" 
-                            onclick="openModuleModal('Hotel Reception & Executive Dining', 'Commercial Hospitality', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.', '2.png')" 
+                            onclick="openZoomImage('2.png', 'Hotel Reception & Executive Dining', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.')" 
                             class="mt-4 w-full gold-gradient text-black text-xs font-bold py-3 rounded-xl cursor-pointer shadow-md hover:opacity-90 transition">
-                        👁 View Details
+                        👁 View Details (Full Screen)
                     </button>
                 </div>
             </div>
@@ -230,17 +221,17 @@
             <!-- FRAME 4: Arched Wall Dining (4.png) -->
             <div class="proj-card luxury glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
                 <div class="h-64 overflow-hidden relative cursor-pointer"
-                     onclick="openModuleModal('Contemporary Arched Wall Alcove', 'Bespoke Wall Architecture', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.', '4.png')">
+                     onclick="openZoomImage('4.png', 'Contemporary Arched Wall Alcove', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.')">
                     <img src="4.png" alt="Arch Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Arched Architecture</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
                 </div>
                 <div class="p-5">
                     <h3 class="font-bold text-white text-base">Contemporary Arched Alcove</h3>
                     <p class="text-xs text-gray-300 mt-1">Illuminated niches with custom banquettes</p>
                     <button type="button" 
-                            onclick="openModuleModal('Contemporary Arched Wall Alcove', 'Bespoke Wall Architecture', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.', '4.png')" 
+                            onclick="openZoomImage('4.png', 'Contemporary Arched Wall Alcove', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.')" 
                             class="mt-4 w-full gold-gradient text-black text-xs font-bold py-3 rounded-xl cursor-pointer shadow-md hover:opacity-90 transition">
-                        👁 View Details
+                        👁 View Details (Full Screen)
                     </button>
                 </div>
             </div>
@@ -248,17 +239,17 @@
             <!-- FRAME 5: Biophilic Restaurant (6.png) -->
             <div class="proj-card luxury glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
                 <div class="h-64 overflow-hidden relative cursor-pointer"
-                     onclick="openModuleModal('Panoramic Biophilic Restaurant Space', 'Natural Integration Design', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.', '6.png')">
+                     onclick="openZoomImage('6.png', 'Panoramic Biophilic Restaurant Space', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.')">
                     <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Biophilic Space</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
                 </div>
                 <div class="p-5">
                     <h3 class="font-bold text-white text-base">Panoramic Biophilic Space</h3>
                     <p class="text-xs text-gray-300 mt-1">Nature-infused dining with modular greenery</p>
                     <button type="button" 
-                            onclick="openModuleModal('Panoramic Biophilic Restaurant Space', 'Natural Integration Design', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.', '6.png')" 
+                            onclick="openZoomImage('6.png', 'Panoramic Biophilic Restaurant Space', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.')" 
                             class="mt-4 w-full gold-gradient text-black text-xs font-bold py-3 rounded-xl cursor-pointer shadow-md hover:opacity-90 transition">
-                        👁 View Details
+                        👁 View Details (Full Screen)
                     </button>
                 </div>
             </div>
@@ -266,12 +257,24 @@
         </div>
     </section>
 
-    <!-- Project Inquiry Desk (Direct WhatsApp) -->
-    <section id="consult" class="max-w-xl mx-auto px-6 py-12 relative z-10">
-        <div class="glass-panel p-8 rounded-3xl border-amber-500/40 relative">
-            <h2 class="font-luxury text-2xl font-bold text-center gold-text mb-2">Instant Project Consultation</h2>
-            <p class="text-xs text-center text-gray-300 mb-6">Submit your project details to initiate direct consultation on WhatsApp with our management desk.</p>
+    <!-- 100% VISIBLE PROJECT INQUIRY FORM (WHATSAPP INTEGRATION) -->
+    <section id="consult-section" class="max-w-xl mx-auto px-6 py-12 relative z-20">
+        <div class="glass-panel p-8 md:p-10 rounded-3xl border border-amber-400/60 relative shadow-2xl">
+            <h2 class="font-luxury text-2xl md:text-3xl font-bold text-center gold-text mb-2">Instant Project Consultation</h2>
+            <p class="text-xs text-center text-gray-300 mb-8 leading-relaxed">
+                Fill out the details below to initiate direct WhatsApp consultation with our client management desk.
+            </p>
 
-            <div id="formContainer" class="space-y-4">
+            <form id="leadForm" onsubmit="event.preventDefault(); submitLeadToWhatsApp();" class="space-y-5">
                 <div>
-                    <label class="block text-[11px] text-gray-300 uppe
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1.5">Full Name & Location / City</label>
+                    <input type="text" id="custName" placeholder="e.g. Ganesh Nehale - Pachod" required
+                           class="w-full bg-neutral-900/95 border border-neutral-700 rounded-xl px-4 py-3.5 text-xs text-white focus:outline-none focus:border-amber-400 transition">
+                </div>
+                <div>
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1.5">Mobile / WhatsApp Number</label>
+                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" required
+                           class="w-full bg-neutral-900/95 border border-neutral-700 rounded-xl px-4 py-3.5 text-xs text-white focus:outline-none focus:border-amber-400 transition">
+                </div>
+                <div>
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-se
