@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="mr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AURA Architectural Studio & Structural Planners</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Luxury Fonts -->
+    <!-- Luxury Serif & Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #030508; 
-            color: #e5e7eb; 
+            background: #030508; 
+            color: #f3f4f6; 
             overflow-x: hidden;
         }
         .font-luxury { 
             font-family: 'Cinzel', serif; 
         }
         .gold-gradient { 
-            background: linear-gradient(135deg, #d4af37 0%, #f7e7a9 50%, #aa771c 100%); 
+            background: linear-gradient(135deg, #d4af37 0%, #f9e8a2 50%, #aa771c 100%); 
         }
         .gold-text { 
-            background: linear-gradient(135deg, #d4af37, #f7e7a9); 
+            background: linear-gradient(135deg, #d4af37 0%, #fcedaa 50%, #aa771c 100%); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
         .glass-panel { 
-            background: rgba(10, 15, 26, 0.75); 
-            backdrop-filter: blur(18px); 
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(212, 175, 55, 0.22); 
+            background: rgba(12, 18, 30, 0.72); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.28); 
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glass-panel:hover { 
@@ -41,52 +45,55 @@
         }
         .tab-active { 
             background: linear-gradient(135deg, #d4af37, #aa771c); 
-            color: #06090e; 
+            color: #030508; 
             font-weight: 800; 
         }
 
-        /* व्हिडिओ ॲपसारखा स्मूथ राउंड-राउंड बॅकग्राउंड फ्लो */
-        @keyframes circularFloat1 {
-            0% { transform: scale(1) translate(0px, 0px) rotate(0deg); opacity: 0.3; }
-            33% { transform: scale(1.08) translate(20px, -25px) rotate(2deg); opacity: 0.5; }
-            66% { transform: scale(1.04) translate(-15px, 20px) rotate(-1deg); opacity: 0.35; }
-            100% { transform: scale(1) translate(0px, 0px) rotate(0deg); opacity: 0.3; }
+        /* Continuous Kinetic Rotating & Zooming Background Flow */
+        @keyframes orbitZoom1 {
+            0% { transform: scale(1.05) translate(0px, 0px) rotate(0deg); opacity: 0.45; filter: blur(0px); }
+            33% { transform: scale(1.18) translate(30px, -20px) rotate(3deg); opacity: 0.65; filter: blur(1px); }
+            66% { transform: scale(1.12) translate(-25px, 25px) rotate(-2deg); opacity: 0.45; filter: blur(0px); }
+            100% { transform: scale(1.05) translate(0px, 0px) rotate(0deg); opacity: 0.45; filter: blur(0px); }
         }
-        @keyframes circularFloat2 {
-            0% { transform: scale(1.06) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
-            33% { transform: scale(1) translate(-25px, 20px) rotate(-2deg); opacity: 0.2; }
-            66% { transform: scale(1.1) translate(20px, -15px) rotate(1deg); opacity: 0.45; }
-            100% { transform: scale(1.06) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
+        @keyframes orbitZoom2 {
+            0% { transform: scale(1.15) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
+            33% { transform: scale(1.08) translate(-30px, 20px) rotate(-3deg); opacity: 0.55; }
+            66% { transform: scale(1.22) translate(25px, -20px) rotate(2deg); opacity: 0.35; }
+            100% { transform: scale(1.15) translate(0px, 0px) rotate(0deg); opacity: 0.35; }
         }
-        .bg-flow-1 {
-            animation: circularFloat1 24s ease-in-out infinite;
+        .flow-layer-1 {
+            animation: orbitZoom1 26s ease-in-out infinite alternate;
         }
-        .bg-flow-2 {
-            animation: circularFloat2 28s ease-in-out infinite;
+        .flow-layer-2 {
+            animation: orbitZoom2 30s ease-in-out infinite alternate;
         }
     </style>
 </head>
 <body class="selection:bg-amber-400 selection:text-black pb-28 relative">
 
-    <!-- CONTINUOUS CINEMATIC MOTION BACKGROUND (व्हिडिओ ॲपसारखा बॅकग्राउंड) -->
+    <!-- SEAMLESS KINETIC IMAGE BACKGROUND FLOW (NO SOLID BLACK COLOR) -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <img src="1.png" class="absolute inset-0 w-full h-full object-cover bg-flow-1 filter blur-[1px]" alt="Background Flow 1">
-        <img src="4.png" class="absolute inset-0 w-full h-full object-cover bg-flow-2 mix-blend-overlay filter blur-[1px]" alt="Background Flow 2">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#030508]/85 via-[#030508]/92 to-[#030508]"></div>
+        <!-- Floating Primary Interior -->
+        <img src="1.png" class="absolute inset-0 w-full h-full object-cover flow-layer-1" alt="Interior Architecture 1">
+        <!-- Overlay Rotating Ambience Interior -->
+        <img src="4.png" class="absolute inset-0 w-full h-full object-cover flow-layer-2 mix-blend-screen opacity-50" alt="Interior Architecture 2">
+        <!-- Soft Luxury Gradient Tint to keep fonts crystal clear -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#030508]/60 via-[#030508]/75 to-[#030508]/85"></div>
     </div>
 
     <!-- Top Navigation Bar -->
-    <nav class="fixed w-full top-0 z-40 glass-panel px-5 py-3.5 flex justify-between items-center border-b border-neutral-800/80">
+    <nav class="fixed w-full top-0 z-40 glass-panel px-6 py-4 flex justify-between items-center border-b border-amber-500/20">
         <div>
-            <span class="font-luxury text-lg md:text-xl font-extrabold tracking-widest gold-text block">AURA STUDIO</span>
-            <span class="text-[9px] uppercase tracking-wider text-amber-300/80">Architectural & Structural Planners</span>
+            <span class="font-luxury text-xl md:text-2xl font-black tracking-widest gold-text block">AURA STUDIO</span>
+            <span class="text-[9px] uppercase tracking-widest text-amber-300/80 font-semibold">Architectural & Structural Planners</span>
         </div>
         <div class="flex items-center gap-2">
-            <a href="tel:+918668850065" class="bg-amber-500/10 border border-amber-400/50 text-amber-300 text-xs px-3.5 py-1.5 rounded-full font-semibold flex items-center gap-1 hover:bg-amber-400 hover:text-black transition">
-                📞 <span>कॉल करा</span>
+            <a href="tel:+918668850065" class="bg-amber-500/10 border border-amber-400/50 text-amber-300 text-xs px-4 py-1.5 rounded-full font-semibold flex items-center gap-1.5 hover:bg-amber-400 hover:text-black transition">
+                📞 <span>Call Desk</span>
             </a>
-            <a href="#consult" class="gold-gradient text-black text-xs px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1 hover:opacity-90 transition">
-                ⚡ <span>व्हिजिट बुक करा</span>
+            <a href="#consult" class="gold-gradient text-black text-xs px-4 py-1.5 rounded-full font-extrabold flex items-center gap-1 hover:opacity-90 transition shadow-lg">
+                ⚡ <span>Inquire</span>
             </a>
         </div>
     </nav>
@@ -94,28 +101,28 @@
     <!-- Hero Section -->
     <header class="relative z-10 pt-36 pb-12 px-6 text-center max-w-4xl mx-auto">
         <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 mb-6 backdrop-blur-md">
-            <span class="text-[11px] uppercase tracking-widest text-amber-300 font-bold">2D Vastu Plans • 3D Facades • RCC Structure • Luxury Interiors</span>
+            <span class="text-[11px] uppercase tracking-widest text-amber-300 font-bold">2D Vastu Plans • 3D Elevations • Structural RCC • Bespoke Interiors</span>
         </div>
-        <h1 class="font-luxury text-3xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-md">
+        <h1 class="font-luxury text-3xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-lg">
             Precision Engineering Meets <br><span class="gold-text">Bespoke Architectural Luxury.</span>
         </h1>
-        <p class="text-gray-300 text-xs md:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-            प्रत्येक डिझाईन आणि फ्लोअर प्लॅन्सचे स्वतंत्र व्ह्यूव्हर्स खाली उपलब्ध आहेत. हवे असणाऱ्या डिझाइनवर क्लिक करून सविस्तर माहिती तपासा.
+        <p class="text-gray-200 text-xs md:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed drop-shadow">
+            Explore certified architectural blueprints, photorealistic 3D elevations, and luxury hospitality spaces. Click below to inspect certified designs.
         </p>
 
-        <!-- Direct Action Buttons -->
+        <!-- Direct Fast Action Buttons -->
         <div class="flex flex-wrap justify-center gap-3">
-            <button onclick="showDetail('30 x 60 Vastu Ground Floor Plan', 'Architectural Drafting & Vastu Layout', '30 x 60 चा प्रमाणित वास्तू नकाशा. स्वतंत्र 2 युनिट्स, सेंट्रल पायऱ्या, किचन, बेडरूम, हॉल आणि समोर रस्त्याची परिपूर्ण आखणी.', 'Architectural Ground Floor Plan with Road Context.png')" 
-                    class="gold-gradient text-black font-extrabold px-7 py-3 rounded-full text-xs shadow-xl hover:opacity-90 transition flex items-center gap-2">
-                📐 <span>वास्तू नकाशा उघडा (Open 2D Plan)</span>
+            <button onclick="showDetail('30 x 60 Vastu Master Ground Floor Plan', 'Architectural Drafting & Vastu Layout', 'Vastu-compliant residential master plan with dual self-contained units, central staircase access, kitchen zoning, and approach road alignment.', 'Architectural Ground Floor Plan with Road Context.png')" 
+                    class="gold-gradient text-black font-extrabold px-8 py-3.5 rounded-full text-xs shadow-xl hover:opacity-90 transition flex items-center gap-2 cursor-pointer">
+                📐 <span>Open 2D Master Blueprint</span>
             </button>
-            <a href="tel:+918668850065" class="glass-panel text-amber-300 font-bold px-7 py-3 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition flex items-center gap-2">
-                📞 <span>थेट संपर्क: 8668850065</span>
+            <a href="tel:+918668850065" class="glass-panel text-amber-300 font-bold px-8 py-3.5 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition flex items-center gap-2">
+                📞 <span>Direct Helpline: +91 8668850065</span>
             </a>
         </div>
     </header>
 
-    <!-- Studio Leadership Section -->
+    <!-- Leadership Section (Client Scoping on Ritesh, Site Visit & Architecture on Vaishnavi) -->
     <section class="max-w-5xl mx-auto px-6 py-10 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Ar. Vaishnavi Huljute -->
@@ -124,120 +131,120 @@
                 <h3 class="font-bold text-white text-base">Ar. Vaishnavi Huljute</h3>
                 <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Principal Architect & Urban Planner</p>
                 <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-3">
-                    <p>• 3D Front Facade & Exterior Lighting Concepts</p>
-                    <p>• Certified RCC Framing, Footing & Column Blueprints</p>
-                    <p>• Vastu-Compliant 2D Master Planning</p>
+                    <p>• Advanced 3D Elevations & Facade Lighting Architecture</p>
+                    <p>• On-Site Structural Inspections & Spatial Planning</p>
+                    <p>• Certified RCC Foundation, Beam & Column Blueprints</p>
                 </div>
             </div>
 
-            <!-- Ritesh Nehale (Client Relations & Site Management) -->
+            <!-- Ritesh Nehale (Client Relations & Coordination Head) -->
             <div class="glass-panel p-7 rounded-3xl text-center relative border-amber-500/40">
                 <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md">RN</div>
                 <h3 class="font-bold text-white text-base">Ritesh Nehale</h3>
-                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Project Head & Site Consultation</p>
+                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Managing Partner & Client Coordinator</p>
                 <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-3">
-                    <p>• प्रत्यक्ष जागेची पाहणी (Site Visit) व प्लॉट मोजमाप</p>
-                    <p>• बजेट प्लॅनिंग आणि मटेरियल मार्गदर्शन</p>
-                    <p>• थेट संपर्क: +91 8668850065</p>
+                    <p>• First-Point Consultation & Client Requirement Scoping</p>
+                    <p>• Project Timeline, Budgeting & Studio Liaison</p>
+                    <p>• Direct Contact: +91 8668850065</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INDIVIDUAL DESIGN MODULES (प्रत्येक भागाचे स्वतंत्र बटन्स आणि कार्ड्स) -->
+    <!-- ARCHITECTURAL & INTERIOR MODULES (INDIVIDUAL BUTTONS & ZOOMABLE CARDS) -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-10 relative z-10">
         <div class="text-center mb-8">
-            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Featured Design Modules</h2>
-            <p class="text-xs text-gray-400 mt-1">प्रत्येक डिझाईन स्वतंत्र पाहण्यासाठी खालील कोणत्याही कार्ड किंवा बटणावर टॅप करा</p>
+            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Architectural & Interior Showcase</h2>
+            <p class="text-xs text-gray-300 mt-1">Tap any design card below to inspect high-resolution render details</p>
         </div>
 
         <!-- Filter Buttons -->
         <div class="flex flex-wrap justify-center gap-2 mb-8">
-            <button onclick="filterItems('all')" class="filter-btn tab-active px-4 py-1.5 rounded-full text-xs transition" data-filter="all">All Modules</button>
-            <button onclick="filterItems('plan')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="plan">2D Vastu Plan</button>
-            <button onclick="filterItems('dining')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="dining">Restaurant & Dining</button>
-            <button onclick="filterItems('lounge')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="lounge">Reception & Lounge</button>
+            <button onclick="filterItems('all')" class="filter-btn tab-active px-5 py-2 rounded-full text-xs transition cursor-pointer" data-filter="all">All Modules</button>
+            <button onclick="filterItems('plan')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition cursor-pointer" data-filter="plan">2D Vastu Plan</button>
+            <button onclick="filterItems('dining')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition cursor-pointer" data-filter="dining">Fine Dining & Lounge</button>
+            <button onclick="filterItems('luxury')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition cursor-pointer" data-filter="luxury">Bespoke Wall Concepts</button>
         </div>
 
-        <!-- Design Cards Grid -->
+        <!-- Grid of Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- MODULE 1: 2D Vastu Floor Plan -->
+            <!-- MODULE 1: 30x60 Floor Plan -->
             <div class="proj-card plan glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
-                 onclick="showDetail('30 x 60 Architectural Vastu Plan', '2D Residential Drafting', '३० फूट रुंद आणि ६० फूट लांब जागेचा अचूक वास्तू नकाशा. मध्यभागी पायऱ्या, दोन स्वतंत्र युनिट्स, किचन, बेडरूम, टॉयलेट आणि रोड अलाइनमेंटचे परिपूर्ण प्लॅनिंग.', 'Architectural Ground Floor Plan with Road Context.png')">
-                <div class="h-64 overflow-hidden relative bg-black">
+                 onclick="showDetail('30 x 60 Architectural Vastu Plan', '2D Residential Drafting', 'Master residential layout aligned with cardinal Vastu orientations. Features dual private residences, central circulation corridor, open kitchens, and road approach alignment.', 'Architectural Ground Floor Plan with Road Context.png')">
+                <div class="h-64 overflow-hidden relative bg-black/40">
                     <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Vastu Plan" class="w-full h-full object-contain p-2 hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/85 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2D Vastu Plan</span>
+                    <span class="absolute top-3 left-3 bg-black/85 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2D Blueprint</span>
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-white text-base">३०' x ६०' वास्तू फ्लोअर प्लॅन</h3>
-                    <p class="text-xs text-gray-400 mt-1">रोड context सह ग्राउंड फ्लोअर लेआउट</p>
-                    <button class="mt-4 w-full gold-gradient text-black text-xs font-bold py-2.5 rounded-xl">
-                        🔍 नकाशा पूर्ण स्क्रीनवर उघडा
+                    <h3 class="font-bold text-white text-base">30 x 60 Master Vastu Plan</h3>
+                    <p class="text-xs text-gray-300 mt-1">Full ground floor layout with road context</p>
+                    <button class="mt-4 w-full gold-gradient text-black text-xs font-bold py-2.5 rounded-xl cursor-pointer">
+                        🔍 Open Plan in High-Res
                     </button>
                 </div>
             </div>
 
             <!-- MODULE 2: Fine Dining Space (1.png) -->
             <div class="proj-card dining glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
-                 onclick="showDetail('Fine Dining Space & Banquette Seating', 'Luxury Hospitality Interior', 'वूडन स्लॅटेड सीलिंग, आधुनिक मार्बल फ्लोअरिंग आणि लक्झरी डायनिंग टेबल मांडणी.', '1.png')">
+                 onclick="showDetail('Fine Dining Space & Banquette Seating', 'Luxury Hospitality Interior', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.', '1.png')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Dining Zone</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Hospitality</span>
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-white text-base">फाईन डायनिंग रेस्टॉरंट डिझाईन</h3>
-                    <p class="text-xs text-gray-400 mt-1">वूडन सीलिंग व लक्झरी सिटिंग व्यवस्था</p>
-                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition">
-                        👁 हे डिझाईन तपासा
+                    <h3 class="font-bold text-white text-base">Fine Dining Space</h3>
+                    <p class="text-xs text-gray-300 mt-1">Wooden slatted ceiling & luxury seating</p>
+                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition cursor-pointer">
+                        👁 View Details
                     </button>
                 </div>
             </div>
 
-            <!-- MODULE 3: Hotel Reception & Dining (2.png) -->
-            <div class="proj-card lounge glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
-                 onclick="showDetail('Hotel Reception & Executive Dining', 'Commercial Hospitality', 'आधुनिक रिसेप्शन काउंटर, अ‍ॅकॉस्टिक वॉल पॅनेलिंग आणि स्पॉटलायटिंग संकल्पना.', '2.png')">
+            <!-- MODULE 3: Hotel Reception (2.png) -->
+            <div class="proj-card dining glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
+                 onclick="showDetail('Hotel Reception & Executive Dining', 'Commercial Hospitality', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.', '2.png')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="2.png" alt="Hotel Reception" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Reception & Dining</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Lounge & Reception</span>
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-white text-base">हॉटेल रिसेप्शन व लाउंज</h3>
-                    <p class="text-xs text-gray-400 mt-1">ब्रँडेड काउंटर व प्रीमियम प्रकाशयोजना</p>
-                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition">
-                        👁 हे डिझाईन तपासा
+                    <h3 class="font-bold text-white text-base">Hotel Reception & Lounge</h3>
+                    <p class="text-xs text-gray-300 mt-1">Signature branding wall & dining ergonomics</p>
+                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition cursor-pointer">
+                        👁 View Details
                     </button>
                 </div>
             </div>
 
-            <!-- MODULE 4: Arched Wall Dining Zone (4.png) -->
-            <div class="proj-card dining glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
-                 onclick="showDetail('Contemporary Arched Wall Alcove', 'Bespoke Wall Architecture', 'कमानदार (Arched) वॉल डिझाईन, वॉर्म बॅकलायटिंग आणि सुशोभित डायनिंग कोपरे.', '4.png')">
+            <!-- MODULE 4: Arched Wall Dining (4.png) -->
+            <div class="proj-card luxury glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
+                 onclick="showDetail('Contemporary Arched Wall Alcove', 'Bespoke Wall Architecture', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.', '4.png')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="4.png" alt="Arch Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Arch Architecture</span>
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Arched Architecture</span>
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-white text-base">कन्टेम्पररी आर्च डायनिंग झोन</h3>
-                    <p class="text-xs text-gray-400 mt-1">वॉर्म वॉल निशेस आणि आरामदायक सिटिंग</p>
-                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition">
-                        👁 हे डिझाईन तपासा
+                    <h3 class="font-bold text-white text-base">Contemporary Arched Alcove</h3>
+                    <p class="text-xs text-gray-300 mt-1">Illuminated niches with custom banquettes</p>
+                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition cursor-pointer">
+                        👁 View Details
                     </button>
                 </div>
             </div>
 
-            <!-- MODULE 5: Biophilic Panoramic Dining (6.png) -->
-            <div class="proj-card dining glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
-                 onclick="showDetail('Panoramic Biophilic Restaurant Space', 'Natural Integration Design', 'फ्लोअर-टू-सीलिंग खिडक्या, इनडोअर प्लांट्स आणि नैसर्गिक सूर्यप्रकाशाचा परिपूर्ण वापर.', '6.png')">
+            <!-- MODULE 5: Biophilic Restaurant (6.png) -->
+            <div class="proj-card luxury glass-panel rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between" 
+                 onclick="showDetail('Panoramic Biophilic Restaurant Space', 'Natural Integration Design', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.', '6.png')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
                     <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Biophilic Space</span>
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-white text-base">पॅनोरामिक बायोफिलिक रेस्टॉरंट</h3>
-                    <p class="text-xs text-gray-400 mt-1">निसर्गपूरक रचना व मॉड्यूलर प्लँटर्स</p>
-                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition">
-                        👁 हे डिझाईन तपासा
+                    <h3 class="font-bold text-white text-base">Panoramic Biophilic Space</h3>
+                    <p class="text-xs text-gray-300 mt-1">Nature-infused dining with modular greenery</p>
+                    <button class="mt-4 w-full glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold py-2.5 rounded-xl hover:bg-amber-400 hover:text-black transition cursor-pointer">
+                        👁 View Details
                     </button>
                 </div>
             </div>
@@ -245,44 +252,28 @@
         </div>
     </section>
 
-    <!-- Consultation & Site Visit Booking Form -->
+    <!-- Project Inquiry & Consultation Desk (Lead Goes Directly To You) -->
     <section id="consult" class="max-w-xl mx-auto px-6 py-12 relative z-10">
         <div class="glass-panel p-8 rounded-3xl border-amber-500/40 relative">
-            <h2 class="font-luxury text-2xl font-bold text-center gold-text mb-2">Book Site Visit & Consultation</h2>
-            <p class="text-xs text-center text-gray-400 mb-6">प्लॉटचे मोजमाप किंवा डिझाईन कन्सल्टेशनसाठी थेट WhatsApp वर माहिती पाठवा.</p>
+            <h2 class="font-luxury text-2xl font-bold text-center gold-text mb-2">Instant Project Consultation</h2>
+            <p class="text-xs text-center text-gray-300 mb-6">Submit your project details to initiate direct consultation on WhatsApp with our management desk.</p>
 
             <div id="formContainer" class="space-y-4">
                 <div>
-                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">तुमचे नाव व गाव / शहर</label>
-                    <input type="text" id="custName" placeholder="उदा. गणेश नेहले - पाचोड" 
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Full Name & Location / City</label>
+                    <input type="text" id="custName" placeholder="e.g. Ganesh Nehale - Pachod" 
                            class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
                 </div>
                 <div>
-                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">मोबाईल / WhatsApp नंबर</label>
-                    <input type="tel" id="custPhone" placeholder="उदा. 9876543210" 
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Mobile / WhatsApp Number</label>
+                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" 
                            class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
                 </div>
                 <div>
-                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">अपेक्षित डिझाईन / सेवा</label>
+                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Requested Service</label>
                     <select id="custService" class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
-                        <option value="30 x 60 वास्तू फ्लोअर प्लॅन">30 x 60 वास्तू फ्लोअर प्लॅन (2D Plan)</option>
-                        <option value="बंगल्याचे 3D फ्रंट एलिव्हेशन">बंगल्याचे 3D फ्रंट एलिव्हेशन (Elevation)</option>
-                        <option value="हॉटेल / रेस्टॉरंट लक्झरी इंटिरिअर">हॉटेल / रेस्टॉरंट लक्झरी इंटिरिअर</option>
-                        <option value="RCC स्ट्रक्चरल इंजिनिअरिंग ड्रॉइंग्स">RCC स्ट्रक्चरल इंजिनिअरिंग ड्रॉइंग्स</option>
-                        <option value="थेट जागेची पाहणी (Site Visit Consultation)">थेट जागेची पाहणी (Site Visit Consultation)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">प्लॉटची साईझ (माहित असल्यास)</label>
-                    <input type="text" id="custPlot" placeholder="उदा. 30 x 60 किंवा 1800 sq.ft (पर्यायी)" 
-                           class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
-                </div>
-
-                <button type="button" onclick="submitLeadToWhatsApp()" class="w-full gold-gradient text-black font-extrabold py-4 rounded-xl shadow-xl text-xs uppercase tracking-wider hover:opacity-90 transition cursor-pointer">
-                    ⚡ WhatsApp वर नोंदणी करा (Send Inquiry)
-                </button>
-            </div>
-
-            <!-- धन्यवाद पोचपावती बॉक्स -->
-            <div id="thankYouBox" class="hidden text-center py-6">
-                <div class="w-14 h-14 
+                        <option value="2D Architectural Vastu Floor Plan">2D Architectural Vastu Floor Plan</option>
+                        <option value="3D Bungalow Exterior Elevation">3D Bungalow Exterior Elevation</option>
+                        <option value="Luxury Commercial & Restaurant Interior">Luxury Commercial & Restaurant Interior</option>
+                        <option value="RCC Structural Engineering Blueprints">RCC Structural Engineering Blueprints</option>
+                        <option value="Complete Turnkey Architectural Consultation">Complete Turnkey Architectural Consultation</op
