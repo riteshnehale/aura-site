@@ -1,290 +1,249 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA Architectural Studio & Structural Planners</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Luxury Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            -webkit-tap-highlight-color: transparent;
-            box-sizing: border-box;
-            touch-action: manipulation; /* स्क्रीन अनावश्यक झूम होण्यापासून रोखते */
-        }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: #020408; 
-            color: #f3f4f6; 
-            overflow-x: hidden;
+            background-color: #0d131f; 
+            color: #ffffff; 
         }
         .font-luxury { 
             font-family: 'Cinzel', serif; 
         }
         .gold-gradient { 
-            background: linear-gradient(135deg, #d4af37 0%, #fcedaa 50%, #aa771c 100%) !important; 
+            background: linear-gradient(135deg, #d4af37, #fcedaa, #aa771c); 
+            color: #000000;
+            font-weight: 800;
         }
         .gold-text { 
-            background: linear-gradient(135deg, #d4af37 0%, #fcedaa 50%, #aa771c 100%); 
+            background: linear-gradient(135deg, #d4af37, #fcedaa); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
-        .glass-panel { 
-            background: rgba(15, 23, 42, 0.88); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.4); 
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+        /* Kinetic Slow Floating Background */
+        @keyframes bgFloat {
+            0% { transform: scale(1) translate(0px, 0px); opacity: 0.55; }
+            50% { transform: scale(1.1) translate(15px, -15px); opacity: 0.75; }
+            100% { transform: scale(1) translate(0px, 0px); opacity: 0.55; }
         }
-
-        /* Kinetic Background Motion Flow */
-        @keyframes orbitZoom1 {
-            0% { transform: scale(1.05) translate(0px, 0px); opacity: 0.38; }
-            50% { transform: scale(1.15) translate(15px, -15px); opacity: 0.55; }
-            100% { transform: scale(1.05) translate(0px, 0px); opacity: 0.38; }
-        }
-        @keyframes orbitZoom2 {
-            0% { transform: scale(1.12) translate(0px, 0px); opacity: 0.32; }
-            50% { transform: scale(1.05) translate(-15px, 15px); opacity: 0.5; }
-            100% { transform: scale(1.12) translate(0px, 0px); opacity: 0.32; }
-        }
-        .flow-layer-1 {
-            animation: orbitZoom1 24s ease-in-out infinite alternate;
-        }
-        .flow-layer-2 {
-            animation: orbitZoom2 28s ease-in-out infinite alternate;
-        }
-
-        /* Guaranteed Fullscreen Image Modal */
-        #photoViewerModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.98);
-            z-index: 999999;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 15px;
+        .bg-motion {
+            animation: bgFloat 18s ease-in-out infinite alternate;
         }
     </style>
 </head>
-<body class="selection:bg-amber-400 selection:text-black pb-36 relative">
+<body class="pb-36 relative">
 
-    <!-- CONTINUOUS KINETIC BACKGROUND FLOW -->
+    <!-- CONTINUOUS MOTION BACKGROUND (NO SOLID BLACK) -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <img src="1.png" class="absolute inset-0 w-full h-full object-cover flow-layer-1" alt="Interior Architecture 1">
-        <img src="4.png" class="absolute inset-0 w-full h-full object-cover flow-layer-2 mix-blend-screen opacity-50" alt="Interior Architecture 2">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#020408]/70 via-[#020408]/85 to-[#020408]/95"></div>
+        <img src="1.png" class="absolute inset-0 w-full h-full object-cover bg-motion" alt="Background">
+        <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]"></div>
     </div>
 
-    <!-- Top Luxury Navigation Bar -->
-    <nav class="fixed w-full top-0 z-40 glass-panel px-5 py-3.5 flex justify-between items-center border-b border-amber-500/30">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-luxury font-black text-black text-base shadow-lg border border-amber-300/40">
+    <!-- Navigation Header -->
+    <nav class="fixed w-full top-0 z-40 bg-slate-900/90 border-b border-amber-500/30 px-5 py-3 flex justify-between items-center backdrop-blur-md">
+        <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-full gold-gradient flex items-center justify-center font-luxury font-black text-black text-sm">
                 A
             </div>
             <div>
-                <span class="font-luxury text-lg md:text-xl font-extrabold tracking-widest gold-text block leading-none">AURA STUDIO</span>
-                <span class="text-[9px] uppercase tracking-widest text-amber-300/80 font-semibold mt-1 block">Architectural & Structural Planners</span>
+                <span class="font-luxury text-base font-bold gold-text block leading-none">AURA STUDIO</span>
+                <span class="text-[9px] uppercase tracking-wider text-amber-300">Architecture & Structure</span>
             </div>
         </div>
         <div class="flex items-center gap-2">
-            <a href="tel:+918668850065" class="bg-amber-500/20 border border-amber-400 text-amber-300 text-xs px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1 hover:bg-amber-400 hover:text-black transition">
-                📞 <span>Call Desk</span>
+            <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 text-xs px-3 py-1.5 rounded-full font-bold">
+                📞 Call
             </a>
-            <a href="#consultation-card" class="gold-gradient text-black text-xs px-4 py-1.5 rounded-full font-black flex items-center gap-1 hover:opacity-90 transition shadow-lg">
-                ⚡ <span>Inquire</span>
+            <a href="#consult-box" class="gold-gradient text-xs px-3.5 py-1.5 rounded-full">
+                ⚡ Inquire
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative z-10 pt-36 pb-12 px-6 text-center max-w-4xl mx-auto">
-        <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 mb-6 backdrop-blur-md">
-            <span class="text-[11px] uppercase tracking-widest text-amber-300 font-bold">2D Vastu Plans • 3D Facades • RCC Blueprints • Luxury Turnkey</span>
-        </div>
-        <h1 class="font-luxury text-3xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-lg">
-            Precision Engineering Meets <br><span class="gold-text">Bespoke Architectural Luxury.</span>
+    <!-- Hero Title -->
+    <header class="relative z-10 pt-28 pb-8 px-5 text-center max-w-3xl mx-auto">
+        <span class="inline-block px-3 py-1 rounded-full border border-amber-400/50 bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-3">
+            2D Plans • 3D Facades • RCC Blueprints • Luxury Interiors
+        </span>
+        <h1 class="font-luxury text-3xl md:text-5xl font-bold leading-tight mb-3">
+            Precision Engineering Meets <br><span class="gold-text">Architectural Luxury.</span>
         </h1>
-        <p class="text-gray-200 text-xs md:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed drop-shadow">
-            Certified residential floor planning, high-end commercial hospitality interiors, and certified RCC blueprints. Tap any design below to view high-resolution blueprints in full screen.
+        <p class="text-gray-200 text-xs md:text-sm max-w-xl mx-auto mb-6">
+            Certified residential floor planning, high-end commercial interiors, and structural blueprints.
         </p>
-
-        <div class="flex flex-wrap justify-center gap-3">
-            <button type="button" onclick="showFullScreenPhoto('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Vastu Master Ground Floor Plan', '2D Residential Drafting & Vastu Layout')" 
-                    class="gold-gradient text-black font-black px-7 py-3.5 rounded-full text-xs shadow-xl hover:opacity-90 transition flex items-center gap-2 cursor-pointer">
-                📐 <span>Inspect 2D Master Blueprint (Full Screen)</span>
-            </button>
-            <a href="tel:+918668850065" class="glass-panel text-amber-300 font-bold px-7 py-3.5 rounded-full text-xs border border-amber-400 hover:bg-amber-500/10 transition flex items-center gap-2">
-                📞 <span>Direct Helpline: +91 8668850065</span>
+        <div class="flex justify-center gap-3">
+            <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="gold-gradient px-6 py-3 rounded-full text-xs shadow-lg">
+                📐 Open 2D Master Blueprint
+            </a>
+            <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 px-5 py-3 rounded-full text-xs font-bold bg-slate-900/80">
+                📞 8668850065
             </a>
         </div>
     </header>
 
-    <!-- Leadership Section -->
-    <section class="max-w-5xl mx-auto px-6 py-6 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Ar. Vaishnavi Huljute -->
-            <div class="glass-panel p-7 rounded-3xl text-center relative border border-amber-500/30">
-                <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md font-luxury">VH</div>
-                <h3 class="font-bold text-white text-base">Ar. Vaishnavi Huljute</h3>
-                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Principal Architect & Urban Planner</p>
-                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-3">
-                    <p>• Advanced 3D Elevations & Facade Lighting Architecture</p>
-                    <p>• On-Site Structural Inspections & Spatial Planning</p>
-                    <p>• Certified RCC Foundation, Beam & Column Blueprints</p>
-                </div>
+    <!-- Leadership Roles -->
+    <section class="max-w-4xl mx-auto px-5 py-4 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-900/85 border border-amber-500/30 p-5 rounded-2xl text-center">
+            <h3 class="font-bold text-white text-sm">Ar. Vaishnavi Huljute</h3>
+            <p class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider mt-0.5">Principal Architect & Urban Planner</p>
+            <p class="text-xs text-gray-300 mt-2">3D Elevations, Facades & Structural RCC Framing</p>
+        </div>
+        <div class="bg-slate-900/85 border-2 border-amber-500/60 p-5 rounded-2xl text-center">
+            <h3 class="font-bold text-white text-sm">Ritesh Nehale</h3>
+            <p class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider mt-0.5">Managing Partner & Client Coordinator</p>
+            <p class="text-xs text-gray-300 mt-2">Client Consultation, Project Budgeting & Coordination (+91 8668850065)</p>
+        </div>
+    </section>
+
+    <!-- Architectural & Interior Showcase (Single Clean Frames) -->
+    <section class="max-w-4xl mx-auto px-5 py-8 relative z-10">
+        <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Architectural & Interior Showcase</h2>
+        <p class="text-xs text-center text-gray-300 mb-6">Click any design below to view high-resolution image in full screen</p>
+
+        <div class="space-y-6">
+            <!-- Item 1: 30x60 Floor Plan -->
+            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
+                <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="block h-64 overflow-hidden rounded-xl bg-black/60 mb-3 border border-slate-700">
+                    <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Vastu Plan" class="w-full h-full object-contain p-2">
+                </a>
+                <h3 class="font-bold text-white text-sm">30 x 60 Master Vastu Ground Floor Plan</h3>
+                <p class="text-xs text-gray-300 mt-1">Full residential blueprint with road orientation.</p>
+                <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
+                    🔍 Click Here to Open High-Resolution Plan (Zoomable)
+                </a>
             </div>
 
-            <!-- Ritesh Nehale -->
-            <div class="glass-panel p-7 rounded-3xl text-center relative border-2 border-amber-500/50">
-                <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md font-luxury">RN</div>
-                <h3 class="font-bold text-white text-base">Ritesh Nehale</h3>
-                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Managing Partner & Client Coordinator</p>
-                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-3">
-                    <p>• First-Point Consultation & Client Requirement Scoping</p>
-                    <p>• Project Timeline, Budgeting & Studio Liaison</p>
-                    <p>• Direct Contact: +91 8668850065</p>
-                </div>
+            <!-- Item 2: Fine Dining (1.png) -->
+            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
+                <a href="1.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
+                    <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover">
+                </a>
+                <h3 class="font-bold text-white text-sm">Fine Dining & Lounge Architecture</h3>
+                <p class="text-xs text-gray-300 mt-1">Slatted wooden ceiling and bespoke seating ergonomics.</p>
+                <a href="1.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
+                    🔍 Click Here to Open High-Resolution Image (Zoomable)
+                </a>
+            </div>
+
+            <!-- Item 3: Hotel Reception (2.png) -->
+            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
+                <a href="2.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
+                    <img src="2.png" alt="Hotel Reception" class="w-full h-full object-cover">
+                </a>
+                <h3 class="font-bold text-white text-sm">Hotel Reception & Executive Dining</h3>
+                <p class="text-xs text-gray-300 mt-1">Signature branding wall and warm hospitality lighting.</p>
+                <a href="2.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
+                    🔍 Click Here to Open High-Resolution Image (Zoomable)
+                </a>
+            </div>
+
+            <!-- Item 4: Arched Wall Dining (4.png) -->
+            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
+                <a href="4.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
+                    <img src="4.png" alt="Arched Dining" class="w-full h-full object-cover">
+                </a>
+                <h3 class="font-bold text-white text-sm">Contemporary Arched Wall Alcove</h3>
+                <p class="text-xs text-gray-300 mt-1">Illuminated recessed wall niches and custom banquettes.</p>
+                <a href="4.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
+                    🔍 Click Here to Open High-Resolution Image (Zoomable)
+                </a>
+            </div>
+
+            <!-- Item 5: Biophilic Restaurant (6.png) -->
+            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
+                <a href="6.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
+                    <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover">
+                </a>
+                <h3 class="font-bold text-white text-sm">Panoramic Biophilic Dining Space</h3>
+                <p class="text-xs text-gray-300 mt-1">Nature-infused dining space with modular planters.</p>
+                <a href="6.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
+                    🔍 Click Here to Open High-Resolution Image (Zoomable)
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ARCHITECTURAL & INTERIOR MODULES -->
-    <section id="projects" class="max-w-6xl mx-auto px-5 py-10 relative z-10">
-        <div class="text-center mb-8">
-            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Architectural & Interior Showcase</h2>
-            <p class="text-xs text-gray-300 mt-1">Click any frame below to view the design in full screen</p>
-        </div>
-
-        <!-- Grid of Frames -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- FRAME 1: 30x60 Floor Plan -->
-            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/40 p-3">
-                <div class="h-64 overflow-hidden relative bg-black/60 rounded-xl cursor-pointer" 
-                     onclick="showFullScreenPhoto('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Vastu Master Ground Floor Plan', '2D Residential Drafting & Vastu Layout')">
-                    <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Vastu Plan" class="w-full h-full object-contain p-2 hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tap to Zoom</span>
-                </div>
-                <div class="pt-4 pb-2">
-                    <h3 class="font-bold text-white text-base">30 x 60 Master Vastu Plan</h3>
-                    <p class="text-xs text-gray-300 mt-1">Full ground floor layout with road context</p>
-                    <button type="button" 
-                            onclick="showFullScreenPhoto('Architectural Ground Floor Plan with Road Context.png', '30 x 60 Vastu Master Ground Floor Plan', '2D Residential Drafting & Vastu Layout')" 
-                            class="mt-4 w-full gold-gradient text-black text-xs font-black py-3.5 rounded-xl cursor-pointer shadow-lg hover:opacity-90 transition block text-center">
-                        👁 View Full Screen
-                    </button>
-                </div>
-            </div>
-
-            <!-- FRAME 2: Fine Dining Space (1.png) -->
-            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/40 p-3">
-                <div class="h-64 overflow-hidden relative rounded-xl cursor-pointer"
-                     onclick="showFullScreenPhoto('1.png', 'Fine Dining Space & Banquette Seating', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.')">
-                    <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
-                </div>
-                <div class="pt-4 pb-2">
-                    <h3 class="font-bold text-white text-base">Fine Dining Space</h3>
-                    <p class="text-xs text-gray-300 mt-1">Wooden slatted ceiling & luxury seating</p>
-                    <button type="button" 
-                            onclick="showFullScreenPhoto('1.png', 'Fine Dining Space & Banquette Seating', 'Slatted timber ceiling aesthetics, polished stone floor textures, warm directional spotlights, and optimized guest seating layout.')" 
-                            class="mt-4 w-full gold-gradient text-black text-xs font-black py-3.5 rounded-xl cursor-pointer shadow-lg hover:opacity-90 transition block text-center">
-                        👁 View Full Screen
-                    </button>
-                </div>
-            </div>
-
-            <!-- FRAME 3: Hotel Reception (2.png) -->
-            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/40 p-3">
-                <div class="h-64 overflow-hidden relative rounded-xl cursor-pointer"
-                     onclick="showFullScreenPhoto('2.png', 'Hotel Reception & Executive Dining', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.')">
-                    <img src="2.png" alt="Hotel Reception" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
-                </div>
-                <div class="pt-4 pb-2">
-                    <h3 class="font-bold text-white text-base">Hotel Reception & Lounge</h3>
-                    <p class="text-xs text-gray-300 mt-1">Signature branding wall & dining ergonomics</p>
-                    <button type="button" 
-                            onclick="showFullScreenPhoto('2.png', 'Hotel Reception & Executive Dining', 'Backlit feature branding wall, contemporary reception console, acoustic timber integration, and seamless traffic circulation.')" 
-                            class="mt-4 w-full gold-gradient text-black text-xs font-black py-3.5 rounded-xl cursor-pointer shadow-lg hover:opacity-90 transition block text-center">
-                        👁 View Full Screen
-                    </button>
-                </div>
-            </div>
-
-            <!-- FRAME 4: Arched Wall Dining (4.png) -->
-            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/40 p-3">
-                <div class="h-64 overflow-hidden relative rounded-xl cursor-pointer"
-                     onclick="showFullScreenPhoto('4.png', 'Contemporary Arched Wall Alcove', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.')">
-                    <img src="4.png" alt="Arch Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
-                </div>
-                <div class="pt-4 pb-2">
-                    <h3 class="font-bold text-white text-base">Contemporary Arched Alcove</h3>
-                    <p class="text-xs text-gray-300 mt-1">Illuminated niches with custom banquettes</p>
-                    <button type="button" 
-                            onclick="showFullScreenPhoto('4.png', 'Contemporary Arched Wall Alcove', 'Illuminated recessed niches with floral wall graphics, warm ambient sconces, and refined plush banquet leather seating.')" 
-                            class="mt-4 w-full gold-gradient text-black text-xs font-black py-3.5 rounded-xl cursor-pointer shadow-lg hover:opacity-90 transition block text-center">
-                        👁 View Full Screen
-                    </button>
-                </div>
-            </div>
-
-            <!-- FRAME 5: Biophilic Restaurant (6.png) -->
-            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/40 p-3">
-                <div class="h-64 overflow-hidden relative rounded-xl cursor-pointer"
-                     onclick="showFullScreenPhoto('6.png', 'Panoramic Biophilic Restaurant Space', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.')">
-                    <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tap to Zoom</span>
-                </div>
-                <div class="pt-4 pb-2">
-                    <h3 class="font-bold text-white text-base">Panoramic Biophilic Space</h3>
-                    <p class="text-xs text-gray-300 mt-1">Nature-infused dining with modular greenery</p>
-                    <button type="button" 
-                            onclick="showFullScreenPhoto('6.png', 'Panoramic Biophilic Restaurant Space', 'Floor-to-ceiling glass fenestrations overlooking outdoor scenery, integrated timber planter partitions, and natural light optimization.')" 
-                            class="mt-4 w-full gold-gradient text-black text-xs font-black py-3.5 rounded-xl cursor-pointer shadow-lg hover:opacity-90 transition block text-center">
-                        👁 View Full Screen
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 100% VISIBLE GUARANTEED WHATSAPP INQUIRY FORM (IMPOSSIBLE TO MISS) -->
-    <section id="consultation-card" class="max-w-xl mx-auto px-4 py-8 relative z-20">
-        <div style="background: #0b1120; border: 2px solid #d4af37;" class="p-6 sm:p-8 rounded-3xl shadow-2xl block">
-            <h2 class="font-luxury text-2xl font-bold text-center gold-text mb-2">Instant Project Consultation</h2>
-            <p class="text-xs text-center text-gray-300 mb-6">
+    <!-- 100% VISIBLE WHATSAPP CONSULTATION FORM -->
+    <section id="consult-box" class="max-w-xl mx-auto px-5 py-6 relative z-20">
+        <div class="bg-slate-900 border-2 border-amber-400 p-6 rounded-3xl shadow-2xl">
+            <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Instant Project Consultation</h2>
+            <p class="text-xs text-center text-gray-300 mb-5">
                 Fill the details below to initiate direct WhatsApp consultation with Ritesh Nehale.
             </p>
 
-            <div class="space-y-4">
+            <form onsubmit="event.preventDefault(); sendToWhatsApp();" class="space-y-4">
                 <div>
-                    <label class="block text-xs text-amber-300 uppercase tracking-wider font-bold mb-1.5">Full Name & Location / City</label>
-                    <input type="text" id="custName" placeholder="e.g. Ganesh Nehale - Pachod" 
-                           style="background: #1e293b; border: 1.5px solid #d4af37; color: #ffffff;"
-                           class="w-full rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 block placeholder-gray-400 font-medium">
+                    <label class="block text-xs text-amber-300 font-bold mb-1">FULL NAME & LOCATION / CITY</label>
+                    <input type="text" id="custName" placeholder="e.g. Ritesh Nehale Pachod" required
+                           class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
                 </div>
+
                 <div>
-                    <label class="block text-xs text-amber-300 uppercase tracking-wider font-bold mb-1.5">Mobile / WhatsApp Number</label>
-                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" 
-                           style="background: #1e293b; border: 1.5px solid #d4af37; color: #ffffff;"
-                           class="w-full rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 block placeholder-gray-400 font-medium">
+                    <label class="block text-xs text-amber-300 font-bold mb-1">MOBILE / WHATSAPP NUMBER</label>
+                    <input type="tel" id="custPhone" placeholder="e.g. 7755958849" required
+                           class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
                 </div>
+
                 <div>
-                    <label class="block text-xs text-amber-300 uppercase tracking-wider font-bold mb-1.5">Requested Service</label>
+                    <label class="block text-xs text-amber-300 font-bold mb-1">REQUESTED SERVICE</label>
                     <select id="custService" 
-                            style="background: #1e293b; border: 1.5px solid #d4af37; color: #ffffff;"
-                            class="w-full rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
+                            class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
                         <option value="2D Architectural Vastu Floor Plan">2D Architectural Vastu Floor Plan</option>
-                        <option value="3D Bungalow Exterior Eleva
+                        <option value="3D Bungalow Exterior Elevation">3D Bungalow Exterior Elevation</option>
+                        <option value="Luxury Commercial & Restaurant Interior">Luxury Commercial & Restaurant Interior</option>
+                        <option value="RCC Structural Engineering Blueprints">RCC Structural Engineering Blueprints</option>
+                        <option value="Complete Turnkey Architectural Consultation">Complete Turnkey Architectural Consultation</option>
+                    </select>
+                </div>
+
+                SEND BUTTON -->
+                <button type="submit" class="w-full gold-gradient py-4 rounded-xl shadow-2xl text-sm uppercase tracking-wider block text-center mt-2 cursor-pointer">
+                    🚀 SEND WHATSAPP INQUIRY NOW
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bottom Permanent Bar -->
+    <div class="fixed bottom-0 left-0 w-full z-40 bg-slate-950/95 border-t border-amber-500/30 px-4 py-2.5 flex justify-between items-center gap-3 backdrop-blur-md">
+        <a href="tel:+918668850065" class="flex-1 bg-slate-900 border border-amber-400/40 text-amber-300 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-1">
+            📞 Direct Call
+        </a>
+        <a href="https://wa.me/918668850065?text=Hello%20Ritesh%2C%20I%20am%20visiting%20Aura%20Studio%20website%20and%20want%20to%20consult%20for%20my%20project." class="flex-1 gold-gradient py-2.5 rounded-xl text-center text-xs flex items-center justify-center gap-1 shadow-lg">
+            💬 WhatsApp Chat
+        </a>
+    </div>
+
+    <!-- Direct WhatsApp Script -->
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById('custName').value.trim();
+            var phone = document.getElementById('custPhone').value.trim();
+            var service = document.getElementById('custService').value;
+
+            if (!name || !phone) {
+                alert("Please enter Name and Mobile Number.");
+                return;
+            }
+
+            var text = "*New Architectural Project Inquiry - Aura Studio*\n\n" +
+                       "👤 *Client Name & City:* " + name + "\n" +
+                       "📞 *Client Mobile:* " + phone + "\n" +
+                       "📋 *Requested Service:* " + service + "\n\n" +
+                       "Hello Ritesh, I visited Aura Studio website and would like to confirm my consultation.";
+
+            var targetUrl = "https://wa.me/918668850065?text=" + encodeURIComponent(text);
+            window.location.href = targetUrl;
+        }
+    </script>
+</body>
+                    </html>
+                    
