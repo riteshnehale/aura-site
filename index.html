@@ -6,7 +6,7 @@
     <title>AURA Architectural Studio & Structural Planners</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Luxury Serif & Sans-Serif Fonts -->
+    <!-- Luxury Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,13 +28,13 @@
             -webkit-text-fill-color: transparent; 
         }
         .glass-panel { 
-            background: rgba(15, 23, 42, 0.7); 
+            background: rgba(15, 23, 42, 0.75); 
             backdrop-filter: blur(16px); 
             border: 1px solid rgba(212, 175, 55, 0.22); 
             transition: all 0.3s ease;
         }
         .glass-panel:hover { 
-            border-color: rgba(212, 175, 55, 0.55); 
+            border-color: rgba(212, 175, 55, 0.6); 
             transform: translateY(-2px);
         }
         .tab-active { 
@@ -42,20 +42,37 @@
             color: #06090e; 
             font-weight: 700; 
         }
+        /* Video-like Ambient Animation */
+        @keyframes floatGlow {
+            0% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+            50% { transform: scale(1.15) translate(20px, -20px); opacity: 0.6; }
+            100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+        }
+        .motion-bg {
+            animation: floatGlow 8s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="selection:bg-amber-400 selection:text-black">
+<body class="selection:bg-amber-400 selection:text-black pb-20">
 
     <!-- Top Navigation Bar -->
-    <nav class="fixed w-full z-50 glass-panel px-6 py-4 flex justify-between items-center border-b border-neutral-800/80">
-        <span class="font-luxury text-xl md:text-2xl font-extrabold tracking-widest gold-text">AURA STUDIO</span>
-        <a href="#consult" class="text-[11px] md:text-xs uppercase tracking-widest px-5 py-2.5 border border-amber-400/60 rounded-full text-amber-300 hover:bg-amber-400 hover:text-black transition duration-300 font-semibold shadow-sm">
-            Consult Now
-        </a>
+    <nav class="fixed w-full top-0 z-40 glass-panel px-5 py-3.5 flex justify-between items-center border-b border-neutral-800/80">
+        <span class="font-luxury text-lg md:text-xl font-extrabold tracking-widest gold-text">AURA STUDIO</span>
+        <div class="flex items-center gap-2">
+            <a href="tel:+918668850065" class="bg-amber-500/10 border border-amber-400/50 text-amber-300 text-xs px-3.5 py-1.5 rounded-full font-semibold flex items-center gap-1.5 hover:bg-amber-400 hover:text-black transition">
+                📞 <span>Call Now</span>
+            </a>
+            <a href="https://wa.me/918668850065?text=Hello%20Aura%20Studio%2C%20I%20want%20to%20consult%20regarding%20my%20project." class="gold-gradient text-black text-xs px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1 hover:opacity-90 transition">
+                💬 <span>WhatsApp</span>
+            </a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-36 pb-16 px-6 text-center max-w-5xl mx-auto">
+    <!-- Hero Section with Motion Background -->
+    <header class="relative pt-36 pb-16 px-6 text-center max-w-5xl mx-auto overflow-hidden">
+        <!-- Ambient Animated Lights -->
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-80 h-80 bg-amber-500/20 blur-[100px] rounded-full pointer-events-none motion-bg"></div>
+
         <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 mb-6">
             <span class="text-[11px] uppercase tracking-widest text-amber-300 font-bold">Architecture • Structural Engineering • High-End Interiors</span>
         </div>
@@ -65,89 +82,62 @@
         <p class="text-gray-300 text-xs md:text-base max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Delivering photorealistic 3D elevations, certified RCC structural blueprints, Vastu-aligned residential floor plans, and turnkey commercial interiors.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#projects" class="gold-gradient text-black font-extrabold px-8 py-3.5 rounded-full text-xs md:text-sm shadow-xl hover:opacity-90 transition">
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="#projects" class="gold-gradient text-black font-extrabold px-7 py-3 rounded-full text-xs shadow-xl hover:opacity-90 transition">
                 Explore Projects
             </a>
-            <a href="#brochure" class="glass-panel text-amber-300 font-bold px-8 py-3.5 rounded-full text-xs md:text-sm border border-amber-500/40 hover:bg-amber-500/10 transition">
-                View Brochure
+            <a href="tel:+918668850065" class="glass-panel text-white font-bold px-7 py-3 rounded-full text-xs border border-amber-500/40 hover:bg-amber-500/10 transition">
+                Direct Call: 8668850065
             </a>
         </div>
     </header>
 
     <!-- Studio Leadership Section -->
-    <section class="max-w-5xl mx-auto px-6 py-12">
-        <div class="text-center mb-10">
+    <section class="max-w-5xl mx-auto px-6 py-10">
+        <div class="text-center mb-8">
             <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Studio Leadership</h2>
-            <p class="text-xs text-gray-400 mt-2">Certified design mastery & structured project execution</p>
+            <p class="text-xs text-gray-400 mt-1">Certified design mastery & structured project execution</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Ar. Vaishnavi Huljute -->
-            <div class="glass-panel p-8 rounded-3xl border border-amber-500/30 text-center relative overflow-hidden">
-                <div class="w-16 h-16 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg mb-4 shadow-lg">VH</div>
-                <h3 class="font-bold text-white text-lg">Ar. Vaishnavi Huljute</h3>
-                <p class="text-xs text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Principal Architect & Urban Planner</p>
-                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-4">
-                    <p>• Advanced 3D Elevations & Contemporary Facade Design</p>
-                    <p>• Certified RCC Framing, Foundation & Structural Blueprints</p>
-                    <p>• Vastu-Compliant 2D Master Planning & Commercial Spaces</p>
+            <div class="glass-panel p-7 rounded-3xl text-center relative">
+                <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md">VH</div>
+                <h3 class="font-bold text-white text-base">Ar. Vaishnavi Huljute</h3>
+                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Principal Architect & Urban Planner</p>
+                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1 border-t border-neutral-800 pt-3">
+                    <p>• Advanced 3D Elevations & Facade Design</p>
+                    <p>• Certified RCC Framing & Structural Blueprints</p>
+                    <p>• Vastu-Compliant 2D Master Planning</p>
                 </div>
             </div>
 
             <!-- Ritesh Nehale -->
-            <div class="glass-panel p-8 rounded-3xl border border-amber-500/30 text-center relative overflow-hidden">
-                <div class="w-16 h-16 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg mb-4 shadow-lg">RN</div>
-                <h3 class="font-bold text-white text-lg">Ritesh Nehale</h3>
-                <p class="text-xs text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Project Head & Client Relations</p>
-                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1.5 border-t border-neutral-800 pt-4">
-                    <p>• End-to-End Client Scoping & Architectural Consultations</p>
-                    <p>• Site Execution, Construction Management & Regulatory Clearances</p>
-                    <p>• Structural Material Optimization & Timeline Quality Control</p>
+            <div class="glass-panel p-7 rounded-3xl text-center relative">
+                <div class="w-14 h-14 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-base mb-3 shadow-md">RN</div>
+                <h3 class="font-bold text-white text-base">Ritesh Nehale</h3>
+                <p class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase mt-0.5">Project Head & Client Relations</p>
+                <div class="mt-4 text-xs text-gray-300 leading-relaxed space-y-1 border-t border-neutral-800 pt-3">
+                    <p>• Client Scoping & Architectural Consultations</p>
+                    <p>• Site Execution & Construction Management</p>
+                    <p>• Timeline & Quality Supervision</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Process Section -->
-    <section class="max-w-5xl mx-auto px-6 py-12">
-        <h2 class="font-luxury text-xl md:text-2xl font-bold text-center mb-10 gold-text">Our Architectural Process</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="glass-panel p-6 rounded-2xl">
-                <div class="w-10 h-10 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-3 text-sm shadow-md">01</div>
-                <h3 class="font-semibold text-white text-xs mb-1">Site & Orientation Survey</h3>
-                <p class="text-[11px] text-gray-400">Plot measurements, approach roads, and cardinal sunlight analysis.</p>
-            </div>
-            <div class="glass-panel p-6 rounded-2xl">
-                <div class="w-10 h-10 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-3 text-sm shadow-md">02</div>
-                <h3 class="font-semibold text-white text-xs mb-1">2D Floor Planning</h3>
-                <p class="text-[11px] text-gray-400">Flawless dimensions, circulation flow, and ventilation ergonomics.</p>
-            </div>
-            <div class="glass-panel p-6 rounded-2xl">
-                <div class="w-10 h-10 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-3 text-sm shadow-md">03</div>
-                <h3 class="font-semibold text-white text-xs mb-1">Photorealistic 3D</h3>
-                <p class="text-[11px] text-gray-400">Ultra-high-definition facade textures and profile lighting previews.</p>
-            </div>
-            <div class="glass-panel p-6 rounded-2xl">
-                <div class="w-10 h-10 rounded-full gold-gradient text-black font-bold flex items-center justify-center mx-auto mb-3 text-sm shadow-md">04</div>
-                <h3 class="font-semibold text-white text-xs mb-1">RCC Structural</h3>
-                <p class="text-[11px] text-gray-400">Safe foundation plans, column-beam layouts, and bar-bending schedules.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Signature Portfolio Gallery -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-14">
+    <!-- Signature Portfolio Gallery (Click Kelyavar Photo Motha Disel) -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
         <div class="text-center mb-8">
-            <h2 class="font-luxury text-2xl md:text-4xl font-bold gold-text">Signature Portfolio</h2>
-            <p class="text-xs text-gray-400 mt-2">Click any project card to inspect high-resolution render details</p>
+            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text">Signature Portfolio</h2>
+            <p class="text-xs text-gray-400 mt-1">Photo motha baghnyasathi card var click kara (Tap to view full image)</p>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10">
-            <button onclick="filterItems('all')" class="filter-btn tab-active px-5 py-2 rounded-full text-xs transition" data-filter="all">All Projects</button>
-            <button onclick="filterItems('elevation')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition" data-filter="elevation">3D Elevation</button>
-            <button onclick="filterItems('plan')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition" data-filter="plan">2D Floor Plans</button>
-            <button onclick="filterItems('interior')" class="filter-btn glass-panel text-gray-300 px-5 py-2 rounded-full text-xs transition" data-filter="interior">Commercial & Hospitality</button>
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button onclick="filterItems('all')" class="filter-btn tab-active px-4 py-1.5 rounded-full text-xs transition" data-filter="all">All</button>
+            <button onclick="filterItems('elevation')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="elevation">3D Elevation</button>
+            <button onclick="filterItems('plan')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="plan">2D Plan</button>
+            <button onclick="filterItems('interior')" class="filter-btn glass-panel text-gray-300 px-4 py-1.5 rounded-full text-xs transition" data-filter="interior">Interiors</button>
         </div>
 
         <!-- Portfolio Cards Grid -->
@@ -155,139 +145,161 @@
 
             <!-- Item 1: Front Elevation 1 -->
             <div class="proj-card elevation glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Modern Luxury Bungalow - Direct Front View', '3D Exterior Elevation', 'Front elevation detailing with composite wooden texture panels, profile lighting, and custom terrace parapet.', 'IMG-20261030-WA0061.jpg')">
+                 onclick="showDetail('Modern Luxury Bungalow (Front)', '3D Facade Elevation', 'Composite wooden texture panels with warm profile lighting.', 'IMG-20261030-WA0061.jpg')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="IMG-20261030-WA0061.jpg" alt="Front Elevation 1" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">3D Facade</span>
+                    <img src="IMG-20261030-WA0061.jpg" alt="Front Elevation" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">Modern Residential Bungalow (Front)</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">Residential Bungalow - Front View</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 2: Front Elevation 2 -->
             <div class="proj-card elevation glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Bungalow Facade Perspective View', '3D Exterior Elevation', 'Angular perspective showcasing daylight shadow lines, modern compound wall entrance, and parapet symmetry.', 'IMG-20261030-WA0060.jpg')">
+                 onclick="showDetail('Bungalow Elevation Perspective', '3D Facade Elevation', 'Daylight angle showing terrace parapet and modern entrance framing.', 'IMG-20261030-WA0060.jpg')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="IMG-20261030-WA0060.jpg" alt="Front Elevation 2" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">3D Facade</span>
+                    <img src="IMG-20261030-WA0060.jpg" alt="Perspective Elevation" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">Bungalow Elevation Perspective</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">Bungalow Perspective View</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 3: Ground Floor Plan -->
             <div class="proj-card plan glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('30 x 60 Master Ground Floor Blueprint', 'Architectural 2D Drafting', 'Vastu-aligned residential plan with dual independent units, central circulation staircase, open kitchens, and road approach alignment.', 'Architectural Ground Floor Plan with Road Context.png')">
+                 onclick="showDetail('30 x 60 Ground Floor Plan', '2D Architectural Plan', 'Vastu-aligned layout with road context and staircase placement.', 'Architectural Ground Floor Plan with Road Context.png')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="Architectural Ground Floor Plan with Road Context.png" alt="Ground Floor Plan" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2D Blueprint</span>
+                    <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Blueprint" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">30 x 60 Master Ground Floor Plan</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">30 x 60 Master Ground Plan</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view plan &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 4: Commercial Interior 1 -->
             <div class="proj-card interior glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Fine Dining Space & Banquette Seating', 'Hospitality Interior', 'Wooden slatted ceiling aesthetics, terrazzo/marble flooring, and optimized seating ergonomics for luxury dining.', '1.png')">
+                 onclick="showDetail('Fine Dining Space', 'Luxury Hospitality Interior', 'Slatted timber ceiling and banquet seating ergonomics.', '1.png')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="1.png" alt="Hospitality Dining" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Hospitality</span>
+                    <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">Fine Dining & Restaurant Concept</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">Fine Dining & Lounge Concept</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 5: Commercial Interior 2 -->
             <div class="proj-card interior glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Hotel Reception & Dining Area', 'Hospitality Interior', 'Illuminated acoustic feature walls, warm overhead directional spotlights, and seamless interior traffic flow.', '2.png')">
+                 onclick="showDetail('Hotel Reception & Dining', 'Hospitality Interior', 'Feature lighting with seamless circulation flow.', '2.png')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="2.png" alt="Hotel Interior" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Hospitality</span>
+                    <img src="2.png" alt="Hotel Interior" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">Hotel Dining & Lounge Architecture</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">Hotel Dining Architecture</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 6: Commercial Interior 3 -->
             <div class="proj-card interior glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Arched Wall Dining Alcove', 'Bespoke Interior', 'Illuminated recessed wall niches, timber vertical elements, and warm ambient backlighting.', '4.png')">
+                 onclick="showDetail('Arched Wall Dining Alcove', 'Bespoke Interior', 'Illuminated wall niches and warm backlighting.', '4.png')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="4.png" alt="Arch Interior" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Luxury Interior</span>
+                    <img src="4.png" alt="Arch Interior" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
+                <div class="p-4">
                     <h3 class="font-semibold text-white text-sm">Contemporary Arch Dining Zone</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
             <!-- Item 7: Commercial Interior 4 -->
             <div class="proj-card interior glass-panel rounded-2xl overflow-hidden cursor-pointer" 
-                 onclick="showDetail('Panoramic Biophilic Restaurant Space', 'Hospitality Interior', 'Floor-to-ceiling panoramic fenestration, modular planter partitions, and daylight-rich seating zones.', '6.png')">
+                 onclick="showDetail('Panoramic Biophilic Dining', 'Hospitality Interior', 'Panoramic windows with modular planter integration.', '6.png')">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="6.png" alt="Biophilic Interior" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-black/75 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Biophilic Design</span>
+                    <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-black/80 border border-amber-400/50 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Tap to Zoom</span>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold text-white text-sm">Panoramic Biophilic Dining Space</h3>
-                    <p class="text-[11px] text-gray-400 mt-1">View Project Details &rarr;</p>
+                <div class="p-4">
+                    <h3 class="font-semibold text-white text-sm">Biophilic Dining Space</h3>
+                    <p class="text-[11px] text-amber-400/90 mt-1">Click to view photo &rarr;</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- PDF Brochure Section (Read-Only Viewer, No Direct Download) -->
-    <section id="brochure" class="max-w-4xl mx-auto px-6 py-12">
-        <div class="glass-panel p-8 md:p-10 rounded-3xl border border-amber-500/30 text-center relative overflow-hidden">
-            <span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold block mb-2">Architectural Blueprint & Catalog</span>
-            <h2 class="font-luxury text-2xl md:text-3xl font-bold gold-text mb-4">Official Studio Brochure</h2>
-            <p class="text-xs text-gray-300 max-w-lg mx-auto mb-8 leading-relaxed">
-                Explore architectural layouts, structural specifications, and executive commercial interiors directly inside our digital browser viewer.
-            </p>
-            <div class="flex justify-center">
-                <a href="https://docs.google.com/viewer?url=https://aura-site-ebon.vercel.app/JAYPURIYA%20OP4_removed.pdf&embedded=true" 
-                   target="_blank" 
-                   class="gold-gradient text-black font-extrabold px-10 py-3.5 rounded-full text-xs md:text-sm shadow-xl hover:opacity-90 transition">
-                    👁 View Studio Brochure (Read Only)
-                </a>
-            </div>
+    <!-- PDF Brochure Section (Read-Only) -->
+    <section id="brochure" class="max-w-3xl mx-auto px-6 py-10">
+        <div class="glass-panel p-8 rounded-3xl text-center">
+            <h2 class="font-luxury text-xl md:text-2xl font-bold gold-text mb-3">Official Studio Brochure</h2>
+            <p class="text-xs text-gray-300 mb-6">Explore complete drawings and design catalogs directly in online viewer.</p>
+            <a href="https://docs.google.com/viewer?url=https://aura-site-ebon.vercel.app/JAYPURIYA%20OP4_removed.pdf&embedded=true" 
+               target="_blank" 
+               class="gold-gradient text-black font-extrabold px-8 py-3 rounded-full text-xs shadow-lg inline-block hover:opacity-90 transition">
+                👁 View Studio Brochure (Read Only)
+            </a>
         </div>
     </section>
 
-    <!-- Simplified Consultation Form (Instant WhatsApp Connect) -->
-    <section id="consult" class="max-w-xl mx-auto px-6 py-16">
-        <div class="glass-panel p-8 md:p-10 rounded-3xl border border-amber-500/30">
-            <h2 class="font-luxury text-2xl md:text-3xl font-bold text-center gold-text mb-2">Instant Consultation</h2>
-            <p class="text-xs text-center text-gray-400 mb-8">Enter your name and contact number to chat directly with our team on WhatsApp.</p>
+    <!-- Instant Consultation Form -->
+    <section id="consult" class="max-w-xl mx-auto px-6 py-12">
+        <div class="glass-panel p-8 rounded-3xl">
+            <h2 class="font-luxury text-2xl font-bold text-center gold-text mb-2">Instant Consultation</h2>
+            <p class="text-xs text-center text-gray-400 mb-6">Nav ani number taka, direct WhatsApp var chat kara.</p>
 
-            <form id="contactForm" class="space-y-4">
+            <div class="space-y-4">
                 <div>
                     <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Full Name & Location</label>
-                    <input type="text" id="custName" placeholder="e.g. Rahul Patil - Pachod" required
-                           class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400 transition">
+                    <input type="text" id="custName" placeholder="e.g. Ganesh Nehale - Pachod" 
+                           class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
                 </div>
                 <div>
                     <label class="block text-[11px] text-gray-300 uppercase tracking-wider font-semibold mb-1">Mobile / WhatsApp Number</label>
-                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" required
-                           class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400 transition">
+                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" 
+                           class="w-full bg-neutral-900/90 border border-neutral-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
                 </div>
-                <button type="submit" class="w-full gold-gradient text-black font-extrabold py-4 rounded-xl shadow-xl text-xs md:text-sm mt-4 hover:opacity-90 transition">
+                <button type="button" onclick="sendToWhatsApp()" class="w-full gold-gradient text-black font-extrabold py-3.5 rounded-xl shadow-xl text-xs hover:opacity-90 transition cursor-pointer">
                     Send WhatsApp Inquiry
                 </button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Project Fullscreen Modal Viewer -->
-    <div id="fu
+    <!-- FULLSCREEN PHOTO POPUP (MODAL) -->
+    <div id="fullModal" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4">
+        <div class="glass-panel max-w-2xl w-full rounded-2xl overflow-hidden relative max-h-[90vh] flex flex-col">
+            <button onclick="closeDetail()" class="absolute top-3 right-3 bg-neutral-800 text-white rounded-full w-8 h-8 flex items-center justify-center text-base z-10 hover:bg-amber-500 hover:text-black">✕</button>
+            <div class="w-full h-80 sm:h-96 overflow-hidden bg-black flex items-center justify-center">
+                <img id="mImg" src="" class="max-w-full max-h-full object-contain">
+            </div>
+            <div class="p-5 overflow-y-auto">
+                <span id="mCat" class="text-[10px] text-amber-400 font-bold uppercase tracking-widest"></span>
+                <h3 id="mTitle" class="text-lg font-bold text-white mt-1"></h3>
+                <p id="mDesc" class="text-xs text-gray-300 mt-1 mb-4"></p>
+                <div class="flex gap-2">
+                    <a href="tel:+918668850065" class="glass-panel border border-amber-400/50 text-amber-300 text-xs font-bold px-5 py-2.5 rounded-full inline-block">
+                        📞 Call Us
+                    </a>
+                    <a href="https://wa.me/918668850065?text=Hello%20Aura%20Studio%2C%20I%20am%20interested%20in%20this%20design." class="gold-gradient text-black text-xs font-bold px-5 py-2.5 rounded-full inline-block">
+                        💬 Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permanent Bottom Quick Action Bar for Mobile -->
+    <div class="fixed bottom-0 left-0 w-full z-40 bg-black/90 border-t border-amber-500/30 px-4 py-2.5 flex justify-between items-center gap-3 backdrop-blur-md">
+        <a href="tel:+918668850065" class="flex-1 bg-neutral-900 border border-neutral-700 text-amber-300 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+            📞 Direct Call
+        </a>
+        <a href="https://wa.me/918668850065?text=Hello%20
