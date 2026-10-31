@@ -44,7 +44,7 @@
         }
     </style>
 </head>
-<body class="pb-40 relative">
+<body class="pb-64 relative">
 
     <!-- CONTINUOUS MOTION BACKGROUND -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -291,38 +291,41 @@
         </div>
     </section>
 
-    <!-- 100% VISIBLE GUARANTEED DIRECT WHATSAPP INQUIRY FORM -->
-    <section id="consult-box" class="max-w-xl mx-auto px-4 pt-6 pb-36 relative z-20">
-        <div\u003Cdiv class=\"bg-slate-900 border-2 border-amber-400 p-6 sm:p-8 rounded-3xl shadow-2xl block overflow-visible\"> class="bg-slate-900 border-2 border-amber-400 p-6 sm:p-8 rounded-3xl shadow-2xl block overflow-visible">
+    <!-- 100% VISIBLE GUARANTEED DIRECT WHATSAPP INQUIRY FORM (BUTTON PLACED HIGH) -->
+    <section id="consult-box" class="max-w-xl mx-auto px-4 pt-6 pb-48 relative z-20">
+        <div class="bg-slate-900 border-4 border-amber-400 p-6 sm:p-8 rounded-3xl shadow-2xl block">
             <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Instant Project Consultation</h2>
             <p class="text-xs text-center text-gray-300 mb-6">
-                Fill the details below to initiate direct WhatsApp consultation with Ritesh Nehale.
+                Fill details & tap the gold button to chat directly on WhatsApp with Ritesh Nehale.
             </p>
 
             <div class="space-y-4 block">
                 <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">FULL NAME & LOCATION / CITY</label>
+                    <label class="block text-xs text-amber-300 font-bold mb-1">1. FULL NAME & LOCATION / CITY</label>
                     <input type="text" id="custName" placeholder="e.g. Ritesh Nehale Pachod" 
-                           class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
+                           class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
                 </div>
 
                 <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">MOBILE / WHATSAPP NUMBER</label>
+                    <label class="block text-xs text-amber-300 font-bold mb-1">2. MOBILE / WHATSAPP NUMBER</label>
                     <input type="tel" id="custPhone" placeholder="e.g. 7755958849" 
-                           class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
+                           class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
+                </div>
+
+                <!-- MAIN SEND BUTTON PLACED RIGHT HERE SO IT CAN NEVER BE HIDDEN -->
+                <div class="py-2">
+                    <button type="button" onclick="openWhatsAppDirectly()" 
+                       class="w-full gold-gradient py-4 rounded-xl shadow-2xl text-sm font-black uppercase tracking-wider block text-center cursor-pointer border-2 border-white active:scale-95 transition">
+                        🚀 SEND WHATSAPP INQUIRY NOW
+                    </button>
                 </div>
 
                 <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">REQUESTED SERVICE</label>
+                    <label class="block text-xs text-amber-300 font-bold mb-1">3. REQUESTED SERVICE (OPTIONAL)</label>
                     <select id="custService" 
                             class="w-full bg-slate-800 border-2 border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 block font-medium">
                         <option value="1. Architectural Planning & 2D Vastu Floor Plan">1. Architectural Planning & 2D Vastu Floor Plan</option>
                         <option value="2. 3D Exterior Elevation & Rendering">2. 3D Exterior Elevation & Rendering</option>
                         <option value="3. Working Drawings & Technical Documentation">3. Working Drawings & Technical Documentation</option>
                         <option value="4. Municipal Drawings & Approval Support">4. Municipal Drawings & Approval Support</option>
-                        <option value="5. Residential & Commercial Interior Design">5. Residential & Commercial Interior Design</option>
-                        <option value="6. RCC Structural & Consultant Coordination">6. RCC Structural & Consultant Coordination</option>
-                        <option value="7. Project Execution & Site Coordination">7. Project Execution & Site Coordination</option>
-                        <option value="Complete Turnkey Architectural Solutions">Complete Turnkey Architectural Solutions</option>
-                    </select>
-    </div>
+                        <option value="5. Resident
