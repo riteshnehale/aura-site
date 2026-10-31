@@ -1,303 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>AURA Architectural Studio & Structural Planners</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            -webkit-tap-highlight-color: transparent;
-            box-sizing: border-box;
-        }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #0d131f; 
-            color: #ffffff; 
-            overflow-x: hidden;
-        }
-        .font-luxury { 
-            font-family: 'Cinzel', serif; 
-        }
-        .gold-gradient { 
-            background: linear-gradient(135deg, #d4af37 0%, #fcedaa 50%, #aa771c 100%) !important; 
-            color: #000000 !important;
-            font-weight: 800;
-        }
-        .gold-text { 
-            background: linear-gradient(135deg, #d4af37, #fcedaa); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        @keyframes bgFloat {
-            0% { transform: scale(1) translate(0px, 0px); opacity: 0.55; }
-            50% { transform: scale(1.1) translate(15px, -15px); opacity: 0.75; }
-            100% { transform: scale(1) translate(0px, 0px); opacity: 0.55; }
-        }
-        .bg-motion {
-            animation: bgFloat 18s ease-in-out infinite alternate;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AURA Architectural Studio | Architecture & Structural Planners</title>
+
+<meta name="description" content="AURA Architectural Studio offers architectural planning, 2D floor plans, 3D elevations, interior design, RCC coordination and project consultation.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
+}
+
+html {
+scroll-behavior:smooth;
+}
+
+body {
+margin:0;
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#0d131f;
+color:white;
+overflow-x:hidden;
+}
+
+.font-luxury {
+font-family:'Cinzel',serif;
+}
+
+.gold-text {
+background:linear-gradient(135deg,#d4af37,#fcedaa,#aa771c);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.gold-gradient {
+background:linear-gradient(135deg,#d4af37,#fcedaa,#aa771c);
+color:#000;
+font-weight:900;
+}
+
+.glass {
+background:rgba(15,23,42,.92);
+border:1px solid rgba(212,175,55,.4);
+border-radius:18px;
+}
+
+.section {
+max-width:1000px;
+margin:auto;
+padding:55px 20px;
+}
+
+.hero {
+padding:150px 20px 65px;
+text-align:center;
+position:relative;
+}
+
+.bg-image {
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+opacity:.25;
+}
+
+.overlay {
+position:fixed;
+inset:0;
+background:rgba(2,6,23,.75);
+z-index:-1;
+}
+
+.btn {
+display:inline-block;
+padding:13px 22px;
+border-radius:50px;
+font-size:13px;
+text-decoration:none;
+margin:5px;
+}
+
+.card {
+padding:23px;
+transition:.3s;
+}
+
+.card:hover {
+transform:translateY(-4px);
+border-color:#d4af37;
+}
+
+.gallery img {
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.input-field {
+width:100%;
+padding:15px;
+background:#1e293b;
+color:white;
+border:2px solid #b88b28;
+border-radius:10px;
+outline:none;
+font-size:14px;
+margin-top:7px;
+}
+
+.input-field:focus {
+border-color:#fcedaa;
+}
+
+.input-field::placeholder {
+color:#94a3b8;
+}
+
+label {
+display:block;
+color:#fcd34d;
+font-size:12px;
+font-weight:800;
+margin-top:17px;
+}
+
+option {
+background:#1e293b;
+color:white;
+}
+
+#whatsappBtn {
+width:100%;
+padding:19px 12px;
+margin-top:25px;
+border:none;
+border-radius:13px;
+background:linear-gradient(135deg,#d4af37,#fcedaa,#aa771c);
+color:#000;
+font-size:15px;
+font-weight:900;
+cursor:pointer;
+display:block;
+position:relative;
+z-index:10;
+}
+
+footer {
+border-top:1px solid rgba(212,175,55,.3);
+padding:35px 15px;
+text-align:center;
+}
+
+@media(max-width:600px) {
+
+.hero h1 {
+font-size:30px;
+}
+
+.section {
+padding:40px 16px;
+}
+
+.gallery img {
+height:220px;
+}
+
+}
+
+</style>
 </head>
-<body class="pb-72 relative">
 
-    <!-- CONTINUOUS MOTION BACKGROUND -->
-    <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <img src="1.png" class="absolute inset-0 w-full h-full object-cover bg-motion" alt="Background">
-        <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]"></div>
-    </div>
+<body>
 
-    <!-- Navigation Header -->
-    <nav class="fixed w-full top-0 z-40 bg-slate-900/90 border-b border-amber-500/30 px-5 py-3 flex justify-between items-center backdrop-blur-md">
-        <div class="flex items-center gap-2">
-            <div class="w-9 h-9 rounded-full gold-gradient flex items-center justify-center font-luxury font-black text-black text-sm">
-                A
-            </div>
-            <div>
-                <span class="font-luxury text-base font-bold gold-text block leading-none">AURA STUDIO</span>
-                <span class="text-[9px] uppercase tracking-wider text-amber-300">Architecture & Structure</span>
-            </div>
-        </div>
-        <div class="flex items-center gap-2">
-            <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 text-xs px-3 py-1.5 rounded-full font-bold">
-                📞 Call
-            </a>
-            <a href="#consult-box" class="gold-gradient text-xs px-3.5 py-1.5 rounded-full font-bold">
-                ⚡ Inquire
-            </a>
-        </div>
-    </nav>
+<!-- BACKGROUND -->
 
-    <!-- Hero Title -->
-    <header class="relative z-10 pt-28 pb-8 px-5 text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 rounded-full border border-amber-400/50 bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-3">
-            2D Plans • 3D Facades • RCC Blueprints • Luxury Interiors
-        </span>
-        <h1 class="font-luxury text-3xl md:text-5xl font-bold leading-tight mb-3">
-            Precision Engineering Meets <br><span class="gold-text">Architectural Luxury.</span>
-        </h1>
-        <p class="text-gray-200 text-xs md:text-sm max-w-xl mx-auto mb-6">
-            Certified residential floor planning, high-end commercial interiors, and structural blueprints.
-        </p>
-        <div class="flex justify-center gap-3">
-            <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="gold-gradient px-6 py-3 rounded-full text-xs shadow-lg font-bold">
-                📐 Open 2D Master Blueprint
-            </a>
-            <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 px-5 py-3 rounded-full text-xs font-bold bg-slate-900/80">
-                📞 8668850065
-            </a>
-        </div>
-    </header>
+<img src="1.png" class="bg-image" alt="AURA Studio Background">
 
-    <!-- Leadership Roles -->
-    <section class="max-w-4xl mx-auto px-5 py-4 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-slate-900/85 border border-amber-500/30 p-5 rounded-2xl text-center">
-            <h3 class="font-bold text-white text-sm">Ar. Vaishnavi Huljute</h3>
-            <p class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider mt-0.5">Principal Architect & Urban Planner</p>
-            <p class="text-xs text-gray-300 mt-2">3D Elevations, Facades & Structural RCC Framing</p>
-        </div>
-        <div class="bg-slate-900/85 border-2 border-amber-500/60 p-5 rounded-2xl text-center">
-            <h3 class="font-bold text-white text-sm">Ritesh Nehale</h3>
-            <p class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider mt-0.5">Managing Partner & Client Coordinator</p>
-            <p class="text-xs text-gray-300 mt-2">Client Consultation, Project Budgeting & Coordination (+91 8668850065)</p>
-        </div>
-    </section>
+<div class="overlay"></div>
 
-    <!-- COMPLETE ARCHITECTURAL & INTERIOR DESIGN SOLUTIONS -->
-    <section class="max-w-4xl mx-auto px-5 py-8 relative z-10">
-        <h2 class="font-luxury text-xl md:text-2xl font-bold text-center gold-text mb-1">Complete Architectural & Interior Design Solutions</h2>
-        <p class="text-xs text-center text-gray-300 mb-6">Comprehensive end-to-end design, working drawings, and project execution services</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">1. Architectural Planning & Design</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Residential planning – bungalows, row houses and apartments[span_0](start_span)[span_0](end_span)</li>
-                    <li>Commercial and institutional building planning[span_1](start_span)[span_1](end_span)</li>
-                    <li>2D floor plans & Furniture layouts[span_2](start_span)[span_2](end_span)</li>
-                    <li>Space planning and optimisation[span_3](start_span)[span_3](end_span)</li>
-                    <li>Site planning and site analysis[span_4](start_span)[span_4](end_span)</li>
-                </ul>
-            </div>
+<!-- NAVIGATION -->
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">2. 3D Visualization & Rendering</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>3D exterior elevation design[span_5](start_span)[span_5](end_span)</li>
-                    <li>Photorealistic 3D renders[span_6](start_span)[span_6](end_span)</li>
-                    <li>Interior 3D visualization[span_7](start_span)[span_7](end_span)</li>
-                    <li>Material and colour selection[span_8](start_span)[span_8](end_span)</li>
-                    <li>Façade design options & Walkthroughs[span_9](start_span)[span_9](end_span)</li>
-                </ul>
-            </div>
+<nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/95 border-b border-amber-500/40 px-4 py-3 flex justify-between items-center">
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">3. Working Drawings & Documentation</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Detailed architectural working drawings[span_10](start_span)[span_10](end_span)</li>
-                    <li>Floor plans, sections and elevations[span_11](start_span)[span_11](end_span)</li>
-                    <li>Door, window schedules & Staircase details[span_12](start_span)[span_12](end_span)</li>
-                    <li>Toilet and kitchen details[span_13](start_span)[span_13](end_span)</li>
-                    <li>Electrical and plumbing layouts (DWG & PDF)[span_14](start_span)[span_14](end_span)</li>
-                </ul>
-            </div>
+<div class="flex items-center gap-2">
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">4. Municipal Drawings & Approval</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Municipal submission drawings[span_15](start_span)[span_15](end_span)</li>
-                    <li>Building proposal drawings as per local regulations[span_16](start_span)[span_16](end_span)</li>
-                    <li>Development Plan (DP) and site layout drawings[span_17](start_span)[span_17](end_span)</li>
-                    <li>FSI / FAR and building area statements[span_18](start_span)[span_18](end_span)</li>
-                    <li>UDCPR / local DCR compliance coordination[span_19](start_span)[span_19](end_span)</li>
-                </ul>
-            </div>
+<div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-luxury text-black font-black">
+A
+</div>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">5. Interior Design</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Residential and commercial interior design[span_20](start_span)[span_20](end_span)</li>
-                    <li>Living room, bedroom and kitchen design[span_21](start_span)[span_21](end_span)</li>
-                    <li>Modular kitchen and wardrobe design[span_22](start_span)[span_22](end_span)</li>
-                    <li>False ceiling and lighting design[span_23](start_span)[span_23](end_span)</li>
-                    <li>Wall treatments, wallpapers, textures & detailed drawings[span_24](start_span)[span_24](end_span)</li>
-                </ul>
-            </div>
+<div>
+<div class="font-luxury gold-text text-sm font-bold">
+AURA STUDIO
+</div>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">6. Structural & Consultant Coordination</h3>
-                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>RCC drawing coordination[span_25](start_span)[span_25](end_span)</li>
-                    <li>Architectural and structural drawing coordination[span_26](start_span)[span_26](end_span)</li>
-                    <li>Coordination with structural engineers[span_27](start_span)[span_27](end_span)</li>
-                    <li>Coordination for electrical, plumbing and HVAC services[span_28](start_span)[span_28](end_span)</li>
-                    <li>Drawing review and revision coordination[span_29](start_span)[span_29](end_span)</li>
-                </ul>
-            </div>
+<div class="text-[9px] text-amber-300 tracking-widest">
+ARCHITECTURE & STRUCTURE
+</div>
+</div>
 
-            <div class="bg-slate-900/90 border-2 border-amber-500/60 rounded-2xl p-5 shadow-xl md:col-span-2">
-                <h3 class="text-amber-300 font-bold text-sm mb-2">7. Project Execution & Site Coordination</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
-                    <ul class="space-y-1.5 list-disc list-inside">
-                        <li>Planning-to-execution support[span_30](start_span)[span_30](end_span)</li>
-                        <li>Site visits and progress monitoring[span_31](start_span)[span_31](end_span)</li>
-                        <li>Contractor coordination[span_32](start_span)[span_32](end_span)</li>
-                        <li>Material selection and specifications[span_33](start_span)[span_33](end_span)</li>
-                    </ul>
-                    <ul class="space-y-1.5 list-disc list-inside">
-                        <li>Drawing clarifications at site[span_34](start_span)[span_34](end_span)</li>
-                        <li>Design implementation support[span_35](start_span)[span_35](end_span)</li>
-                        <li>Quality and design-intent coordination[span_36](start_span)[span_36](end_span)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <!-- Showcase Section -->
-    <section class="max-w-4xl mx-auto px-5 py-8 relative z-10">
-        <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Architectural & Interior Showcase</h2>
-        <p class="text-xs text-center text-gray-300 mb-6">Click any design below to view high-resolution image in full screen</p>
+<div class="flex gap-2">
 
-        <div class="space-y-6">
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
-                <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="block h-64 overflow-hidden rounded-xl bg-black/60 mb-3 border border-slate-700">
-                    <img src="Architectural Ground Floor Plan with Road Context.png" alt="2D Vastu Plan" class="w-full h-full object-contain p-2">
-                </a>
-                <h3 class="font-bold text-white text-sm">30 x 60 Master Vastu Ground Floor Plan</h3>
-                <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
-                    🔍 Click Here to Open High-Resolution Plan (Zoomable)
-                </a>
-            </div>
+<a href="tel:+918668850065" class="border border-amber-400 text-amber-300 rounded-full px-3 py-2 text-xs">
+CALL
+</a>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
-                <a href="1.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
-                    <img src="1.png" alt="Fine Dining" class="w-full h-full object-cover">
-                </a>
-                <h3 class="font-bold text-white text-sm">Fine Dining & Lounge Architecture</h3>
-                <a href="1.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
-                    🔍 Click Here to Open High-Resolution Image (Zoomable)
-                </a>
-            </div>
+<a href="#consult-box" class="gold-gradient rounded-full px-3 py-2 text-xs">
+INQUIRE
+</a>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
-                <a href="2.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
-                    <img src="2.png" alt="Hotel Reception" class="w-full h-full object-cover">
-                </a>
-                <h3 class="font-bold text-white text-sm">Hotel Reception & Executive Dining</h3>
-                <a href="2.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
-                    🔍 Click Here to Open High-Resolution Image (Zoomable)
-                </a>
-            </div>
+</div>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
-                <a href="4.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
-                    <img src="4.png" alt="Arched Dining" class="w-full h-full object-cover">
-                </a>
-                <h3 class="font-bold text-white text-sm">Contemporary Arched Wall Alcove</h3>
-                <a href="4.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
-                    🔍 Click Here to Open High-Resolution Image (Zoomable)
-                </a>
-            </div>
+</nav>
 
-            <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 shadow-xl">
-                <a href="6.png" target="_blank" class="block h-64 overflow-hidden rounded-xl mb-3 border border-slate-700">
-                    <img src="6.png" alt="Biophilic Dining" class="w-full h-full object-cover">
-                </a>
-                <h3 class="font-bold text-white text-sm">Panoramic Biophilic Dining Space</h3>
-                <a href="6.png" target="_blank" class="mt-3 block text-center gold-gradient py-3 rounded-xl text-xs font-bold shadow-md">
-                    🔍 Click Here to Open High-Resolution Image (Zoomable)
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- 100% ROCK-SOLID VISIBLE CONSULTATION FORM -->
-    <section id="consult-box" style="position: relative; z-index: 30; max-width: 580px; margin: 0 auto; padding: 20px 16px 160px 16px;">
-        <div style="background-color: #0f172a; border: 3px solid #f59e0b; border-radius: 24px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); display: block;">
-            
-            <h2 class="font-luxury" style="color: #fcedaa; font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 6px;">
-                Instant Project Consultation
-            </h2>
-            <p style="color: #cbd5e1; font-size: 12px; text-align: center; margin-bottom: 20px;">
-                Fill details below and click the button to send your full project requirements to Ritesh Nehale.
-            </p>
+<!-- HERO -->
 
-            <!-- 1. Name Input -->
-            <div style="margin-bottom: 14px;">
-                <label style="display: block; color: #fcd34d; font-size: 12px; font-weight: bold; margin-bottom: 6px;">
-                    1. FULL NAME & LOCATION / CITY
-                </label>
-                <input type="text" id="custName" placeholder="e.g. Chhaya Ganesh Nehale - Pachod" 
-                       style="width: 100%; background-color: #1e293b; border: 2px solid #f59e0b; border-radius: 12px; padding: 12px 14px; font-size: 14px; color: #ffffff; outline: none; display: block;">
-            </div>
+<header class="hero relative z-10">
 
-            <!-- 2. Phone Input -->
-            <div style="margin-bottom: 14px;">
-                <label style="display: block; color: #fcd34d; font-size: 12px; font-weight: bold; margin-bottom: 6px;">
-                    2. MOBILE / WHATSAPP NUMBER
-                </label>
-                <input type="tel" id="custPhone" placeholder="e.g. 8830720310" 
-                       style="width: 100%; background-color: #1e293b; border: 2px solid #f59e0b; border-radius: 12px; padding: 12px 14px; font-size: 14px; color: #ffffff; outline: none; display: block;">
-            </div>
+<div class="inline-block border border-amber-400/50 bg-amber-500/10 text-amber-300 rounded-full px-4 py-2 text-[10px] mb-5">
 
-            <!-- 3. Service Selection -->
-            <div style="margin-bottom: 14px;">
-                <label style="display: block; color: #fcd34d; font-size: 12px; font-weight: bold; margin-bottom: 6px;">
-                    3. REQUESTED SERVICE
-                </label>
-                <select id="custService" 
-                        style="width: 100%; background-color: #1e293b; border: 2px solid #f59e0b; border-radius: 12px; padding: 12px 14px; font-size: 14px; color: #ffffff; outline: none; display: block;">
-                    <option value="1. Architectural Planning & 2D Vastu Floor Plan">1. Architectural Planning & 2D Vastu Floor Plan</option>
-                    <option value="2. 3D Exterior Elevation & Rendering">2. 3D Exterior Elevation & Rendering</option>
-                    <option value="3. Working Drawings & Technical Documentation">3. Working Drawings & Technical Documentation</option>
-                    <option value="4. Municipal Drawings & Approval Support">4. Municipal Drawings & Approval Support</option>
-                    <option value="5. Residential & Commercial Interior Design">5. Residential & Commercial Interior Design</option>
-                    <option value="6. RCC Structural & Consultant Coordination">6. RCC Structural & Consultant Coordination</option>
-                    <option value="7. Project Execution & Site Coordination">7. Project Execution & Site Coordination</option>
-                    <option value="Complete Turnkey Architectural Solutions">Complete Turnkey Architectural Solutions</option>
-  
+2D PLANS • 3D FACADES • RCC BLUEPRINTS • LUXURY INTERIORS
+
+</div>
+
+<h1 class="font-luxury text-4xl md:text-5xl font-bold leading-tight">
+
+Precision Engineering Meets
+
+<br>
+
+<span class="gold-text">
+Architectural Luxury.
+</span>
+
+</h1>
+
+<p class="text-gray-300 text-sm max-w-xl mx-auto mt-5 mb-7">
+
+Professional architectural planning, residential design, commercial interiors, 3D elevations and technical drawing coordination.
+
+</p>
+
+<a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="btn gold-gradient">
+
+OPEN 2D MASTER BLUEPRINT
+
+</a>
+
+<a href="tel:+918668850065" class="btn border border-amber-400 text-amber-300">
+
+CALL 8668850065
+
+</a>
+
+</header>
+
+
+<!-- LEADERSHIP -->
+
+<section class="section relative z-10">
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="glass card text-center">
+
+<h3 class="font-bold text-lg">
+Ar. Vaishnavi Huljute
+</h3>
+
+<p class="text-amber-400 text-xs font-bold mt-2">
+PRINCIPAL ARCHITECT & URBAN PLANNER
+</p>
+
+<p class="text-gray-300 text-sm mt-3">
+3D Elevations, Facades & Structural RCC Framing.
+</p>
+
+</div>
+
+<div class="glass card text-center border-2 border-amber-500">
+
+<h3 class="font-bold text-lg">
+Ritesh Nehale
+</h3>
+
+<p class="text-amber-400 text-xs font-bold mt-2">
+MANAGING PARTNER & CLIENT COORDINATOR
+</p>
+
+<p class="text-gray-300 text-sm mt-3">
+Client Consultation, Project Budgeting & Coordination.
+</p>
+
+<a href="tel:+918668850065" class="text-amber-300 text-sm block mt-3">
++91 8668850065
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section relative z-10">
+
+<h2 class="font-luxury gold-text text-2xl text-center font-bold">
+
+Complete Architectural & Interior Design Solutions
+
+</h2>
+
+<p class="text-gray-300 text-center text-xs mt-3 mb-8">
+
+Comprehensive Design, Working Drawings & Project Coordination.
+
+</p>
+
+<div class="grid md:grid-cols-2 gap-4">
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">1. Architectural Planning & Design</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• Residential Building Planning</li>
+<li>• Bungalows, Row Houses & Apartments</li>
+<li>• Commercial Building Planning</li>
+<li>• 2D Floor Plans & Furniture Layouts</li>
+<li>• Site Planning & Analysis</li>
+</ul>
+</div>
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">2. 3D Visualization & Rendering</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• 3D Exterior Elevations</li>
+<li>• Photorealistic 3D Renders</li>
+<li>• Interior 3D Visualization</li>
+<li>• Material & Colour Selection</li>
+<li>• Façade Design & Walkthroughs</li>
+</ul>
+</div>
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">3. Working Drawings & Documentation</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• Architectural Working Drawings</li>
+<li>• Floor Plans, Sections & Elevations</li>
+<li>• Door & Window Schedules</li>
+<li>• Kitchen & Toilet Details</li>
+<li>• Electrical & Plumbing Layouts</li>
+</ul>
+</div>
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">4. Municipal Drawings & Approval</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• Municipal Submission Drawings</li>
+<li>• Building Proposal Drawings</li>
+<li>• DP & Site Layout Drawings</li>
+<li>• FSI / FAR Statements</li>
+<li>• UDCPR / Local DCR Coordination</li>
+</ul>
+</div>
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">5. Interior Design</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• Residential & Commercial Interiors</li>
+<li>• Living Room & Bedroom Design</li>
+<li>• Modular Kitchen & Wardrobes</li>
+<li>• False Ceiling & Lighting</li>
+<li>• Wall Treatments & Textures</li>
+</ul>
+</div>
+
+<div class="glass card">
+<h3 class="text-amber-300 font-bold mb-3">6. Structural & Consultant Coordination</h3>
+<ul class="text-gray-300 text-sm space-y-2">
+<li>• RCC Drawing Coordination</li>
+<li>• Structural Drawing Coordination</li>
+<li>• Structural Engineer Coordination</li>
+<li>• Electrical & Plumbing Services</li>
+<li>• Drawing Review & Revisions</li>
+</ul>
+</div>
+
+<div class="glass card md:col-span-2 border-2 border-amber-500/60">
+
+<h3 class="text-amber-300 font-bold mb-3">
+7. Project Execution & Site Coordination
+</h3>
+
+<div class="grid sm:grid-cols-2 gap-3 text-gray-300 text-sm">
+
+<ul class="space-y-2">
+<li>• Planning-to-Execution Support</li>
+<li>• Site Visits & Progress Monitoring</li>
+<li>• Contractor Coordination</li>
+<li>• Material Selection</li>
+</ul>
+
+<ul class="space-y-2">
+<li>• Drawing Clarifications</li>
+<li>• Design Implementation Support</li>
+<li>• Quality Coordination</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SHOWCASE -->
+
+<section class="section relative z-10">
+
+<h2 class="font-luxury gold-text text-2xl text-center font-bold">
+Architectural & Interior Showcase
+</h2>
+
+<p class="text-gray-300 text-xs text-center mt-3 mb-8">
+Explore our architectural and interior design concepts.
+</p>
+
+<div class="grid sm:grid-cols-2 gap-6">
+
+<div class="glass p-4 gallery">
+
+<a href="Architectural Ground Floor Plan with Road Context.png" target="_blank">
+<img src="Architectural Ground Floor Plan with Road Context.png" alt="30 x 60 Vastu Floor Plan">
+</a>
+
+<h3 class="font-bold mt-4 text-sm">
+30 x 60 Master Vastu Ground Floor Plan
+</h3>
+
+</div>
+
+<div class="glass p-4 gallery">
+
+<a href="1.png" target="_blank">
+<img src="1.png" alt="Fine Dining Architecture">
+</a>
+
+<h3 class="font-bold mt-4 text-sm">
+Fine Dining & Lounge Architecture
+</h3>
+
+</div>
+
+<div class="glass p-4 gallery">
+
+<a href="2.png" target="_blank">
+<img src="2.png" alt="Hotel Reception">
+</a>
+
+<h3 class="font-bold mt-4 text-sm">
+Hotel Reception & Executive Dining
+</h3>
+
+</div>
+
+<div class="glass p-4 gallery">
+
+<a href="4.png" target="_blank">
+<img src="4.png" alt="Arched Dining Interior">
+</a>
+
+<h3 class="font-bold mt-4 text-sm">
+Contemporary Arched Wall Alcove
+</h3>
+
+</div>
+
+<div class="glass p-4 gallery sm:col-span-2">
+
+<a href="6.png" target="_blank">
+<img src="6.png" alt="Biophilic Dining Space">
+</a>
+
+<h3 class="font-bold mt-4 text-sm">
+Panoramic Biophilic Dining Space
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHATSAPP INQUIRY FORM -->
+
+<section id="consult-box" class="section relative z-10">
+
+<div class="glass border-2 border-amber-500 p-5 md:p-8 max-w-xl mx-auto">
+
+<h2 class="font-luxury gold-text text-2xl font-bold text-center">
+
+Instant Project Consultation
+
+</h2>
+
+<p class="text-gray-300 text-xs text-center mt-3 mb-5">
+
+Fill in your details and send your complete project inquiry directly to AURA STUDIO.
+
+</p>
+
+<form id="auraInquiryForm">
+
+<label for="custName">1. FULL NAME *</label>
+
+<input
+class="input-field"
+id="custName"
+type="text"
+placeholder="Enter your full name"
+maxlength="100"
+autocomplete="name"
+required
+>
+
+<label for="custLocation">2. CITY / PROJECT LOCATION *</label>
+
+<input
+class="input-field"
+id="custLocation"
+type="text"
+placeholder="Enter project location"
+maxlength="150"
+required
+>
+
+<label for="custPhone">3. MOBILE / WHATSAPP NUMBER *</label>
+
+<input
+class="input-field"
+id="custPhone"
+type="tel"
+placeholder="Enter 10-digit mobile number"
+inputmode="tel"
+pattern="[0-9+\-\s]{10,16}"
+maxlength="16"
+autocomplete="tel"
+required
+>
+
+<label for="custService">4. REQUESTED SERVICE *</label>
+
+<select class="input-field" id="custService" required>
+
+<option value="">Select Service</option>
+
+<option>Architectural Planning & 2D Vastu Floor Plan</option>
+
+<option>3D Exterior Elevation & Rendering</option>
+
+<option>Working Drawings & Technical Documentation</option>
+
+<option>Municipal Drawings & Approval Support</option>
+
+<option>Residential & Commercial Interior Design</option>
+
+<option>RCC Structural & Consultant Coordination</option>
+
+<option>Project Execution & Site Coordination</option>
+
+<option>Complete Architectural Package</option>
+
+</select>
+
+<label for="custPlot">5. PLOT SIZE</label>
+
+<input
+class="input-field"
+id="custPlot"
+type="text"
+placeholder="Example: 30 x 60 feet"
+maxlength="80"
+>
+
+<label for="custBudget">6. PROJECT BUDGET</label>
+
+<select class="input-field" id="custBudget">
+
+<option value="Not specified">Select Budget</option>
+
+<option>Below ₹10 Lakhs</option>
+
+<option>₹10 - ₹25 Lakhs</option>
+
+<option>₹25 - ₹50 Lakhs</option>
+
+<option>₹50 Lakhs - ₹1 Crore</option>
+
+<option>Above ₹1 Crore</option>
+
+<option>Design Consultation Only</option>
+
+</select>
+
+<label for="custMessage">7. PROJECT REQUIREMENTS *</label>
+
+<textarea
+class="input-field"
+id="custMessage"
+rows="5"
+maxlength="2000"
+placeholder="Describe your project requirements..."
+required
+></textarea>
+
+<button type="submit" id="whatsappBtn">
+
+SEND COMPLETE PROJECT DETAILS ON WHATSAPP
+
+</button>
+
+<p id="formStatus" role="status" aria-live="polite" class="text-center text-xs text-gray-300 mt-4">
+
+Your WhatsApp application will open with your inquiry ready to send.
+
+</p>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section text-center relative z-10">
+
+<h2 class="font-luxury gold-text text-2xl font-bold">
+Contact AURA STUDIO
+</h2>
+
+<p class="text-gray-300 text-sm mt-4">
+For Architectural Planning, Interior Design & Project Consultation.
+</p>
+
+<a href="tel:+918668850065" class="btn gold-gradient mt-5">
+CALL +91 8668850065
+</a>
+
+<a href="https://wa.me/918668850065" target="_blank" rel="noopener noreferrer" class="btn border border-amber-400 text-amber-300 mt-5">
+CHAT ON WHATSAPP
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="relative z-10">
+
+<h3 class="font-luxury gold-text font-bold text-xl">
+AURA ARCHITECTURAL STUDIO
+</h3>
+
+<p class="text-gray-400 text-xs mt-3">
+Architecture • Structure • Interior Design
+</p>
+
+<p class="text-gray-500 text-xs mt-4">
+© 2026 AURA STUDIO. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP JAVASCRIPT -->
+
+<script>
+
+(function() {
+
+"use strict";
+
+const form = document.getElementById("auraInquiryForm");
+
+const button = document.getElementById("whatsappBtn");
+
+const status = document.getElementById("formStatus");
+
+// STUDIO WHATSAPP NUMBER
+const WHATSAPP_NUMBER = "918668850065";
+
+form.addEventListener("submit", function(event) {
+
+event.preventDefault();
+
+if (!form.reportValidity()) {
+return;
+}
+
+const name = document.getElementById("custName").value.trim();
+
+const location = document.getElementById("custLocation").value.trim();
+
+const phone = document.getElementById("custPhone").value.trim();
+
+const service = document.getElementById("custService").value;
+
+const plot = document.getElementById("custPlot").value.trim() || "Not specified";
+
+const budget = document.getElementById("custBudget").value;
+
+const requirements = document.getElementById("custMessage").value.trim();
+
+if (!name || !location || !phone || !service || !requirements) {
+
+status.textContent = "Please complete all required fields.";
+
+return;
+
+}
+
+// COMPLETE WHATSAPP MESSAGE
+
+const message =
+
+`🏛️ AURA ARCHITECTURAL STUDIO
+
+NEW PROJECT INQUIRY
+
+━━━━━━━━━━━━━━━━━━
+
+👤 CLIENT INFORMATION
+
+Full Name: ${name}
+
+Project Location: ${location}
+
+Client Mobile: ${phone}
+
+━━━━━━━━━━━━━━━━━━
+
+📐 PROJECT INFORMATION
+
+Requested Service: ${service}
+
+Plot Size: ${plot}
+
+Project Budget: ${budget}
+
+━━━━━━━━━━━━━━━━━━
+
+📝 PROJECT REQUIREMENTS
+
+${requirements}
+
+━━━━━━━━━━━━━━━━━━
+
+Please contact me regarding this project.
+
+Thank you.
+
+AURA STUDIO WEBSITE INQUIRY`;
+
+// ENCODE COMPLETE MESSAGE
+
+const encodedMessage = encodeURIComponent(message);
+
+// CREATE WHATSAPP LINK
+
+const whatsappURL =
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodedMessage;
+
+// UPDATE BUTTON
+
+button.disabled = true;
+
+button.textContent = "OPENING WHATSAPP...";
+
+status.textContent = "Redirecting to WhatsApp. Please press Send there.";
+
+// OPEN WHATSAPP
+
+window.location.assign(whatsappURL);
+
+// RESTORE BUTTON IF USER RETURNS
+
+setTimeout(function() {
+
+button.disabled = false;
+
+button.textContent = "SEND COMPLETE PROJECT DETAILS ON WHATSAPP";
+
+}, 4000);
+
+});
+
+})();
+
+</script>
+
+</body>
+    </html>
