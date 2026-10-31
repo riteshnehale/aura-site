@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AURA Architectural Studio & Structural Planners</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+        }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #0d131f; 
             color: #ffffff; 
+            overflow-x: hidden;
         }
         .font-luxury { 
             font-family: 'Cinzel', serif; 
         }
         .gold-gradient { 
-            background: linear-gradient(135deg, #d4af37, #fcedaa, #aa771c); 
-            color: #000000;
+            background: linear-gradient(135deg, #d4af37 0%, #fcedaa 50%, #aa771c 100%) !important; 
+            color: #000000 !important;
             font-weight: 800;
         }
         .gold-text { 
@@ -41,7 +46,7 @@
 </head>
 <body class="pb-36 relative">
 
-    <!-- CONTINUOUS MOTION BACKGROUND (NO SOLID BLACK) -->
+    <!-- CONTINUOUS MOTION BACKGROUND -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <img src="1.png" class="absolute inset-0 w-full h-full object-cover bg-motion" alt="Background">
         <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]"></div>
@@ -62,7 +67,7 @@
             <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 text-xs px-3 py-1.5 rounded-full font-bold">
                 📞 Call
             </a>
-            <a href="#consult-box" class="gold-gradient text-xs px-3.5 py-1.5 rounded-full">
+            <a href="#consult-box" class="gold-gradient text-xs px-3.5 py-1.5 rounded-full font-bold">
                 ⚡ Inquire
             </a>
         </div>
@@ -80,7 +85,7 @@
             Certified residential floor planning, high-end commercial interiors, and structural blueprints.
         </p>
         <div class="flex justify-center gap-3">
-            <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="gold-gradient px-6 py-3 rounded-full text-xs shadow-lg">
+            <a href="Architectural Ground Floor Plan with Road Context.png" target="_blank" class="gold-gradient px-6 py-3 rounded-full text-xs shadow-lg font-bold">
                 📐 Open 2D Master Blueprint
             </a>
             <a href="tel:+918668850065" class="border border-amber-400 text-amber-300 px-5 py-3 rounded-full text-xs font-bold bg-slate-900/80">
@@ -103,7 +108,7 @@
         </div>
     </section>
 
-    <!-- COMPLETE ARCHITECTURAL & INTERIOR DESIGN SOLUTIONS (NEW ADDED SECTION) -->
+    <!-- COMPLETE ARCHITECTURAL & INTERIOR DESIGN SOLUTIONS -->
     <section class="max-w-4xl mx-auto px-5 py-8 relative z-10">
         <h2 class="font-luxury text-xl md:text-2xl font-bold text-center gold-text mb-1">Complete Architectural & Interior Design Solutions</h2>
         <p class="text-xs text-center text-gray-300 mb-6">Comprehensive end-to-end design, working drawings, and project execution services</p>
@@ -115,11 +120,11 @@
                     <span>1.</span> Architectural Planning & Design
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Residential planning – bungalows, row houses and apartments[span_2](start_span)[span_2](end_span)</li>
-                    <li>Commercial and institutional building planning[span_3](start_span)[span_3](end_span)</li>
-                    <li>2D floor plans & Furniture layouts[span_4](start_span)[span_4](end_span)</li>
-                    <li>Space planning and optimisation[span_5](start_span)[span_5](end_span)</li>
-                    <li>Site planning and site analysis[span_6](start_span)[span_6](end_span)</li>
+                    <li>Residential planning – bungalows, row houses and apartments</li>
+                    <li>Commercial and institutional building planning</li>
+                    <li>2D floor plans & Furniture layouts</li>
+                    <li>Space planning and optimisation</li>
+                    <li>Site planning and site analysis</li>
                 </ul>
             </div>
 
@@ -129,11 +134,11 @@
                     <span>2.</span> 3D Visualization & Rendering
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>3D exterior elevation design[span_7](start_span)[span_7](end_span)</li>
-                    <li>Photorealistic 3D renders[span_8](start_span)[span_8](end_span)</li>
-                    <li>Interior 3D visualization[span_9](start_span)[span_9](end_span)</li>
-                    <li>Material and colour selection[span_10](start_span)[span_10](end_span)</li>
-                    <li>Façade design options & Walkthroughs[span_11](start_span)[span_11](end_span)</li>
+                    <li>3D exterior elevation design</li>
+                    <li>Photorealistic 3D renders</li>
+                    <li>Interior 3D visualization</li>
+                    <li>Material and colour selection</li>
+                    <li>Façade design options & Walkthroughs</li>
                 </ul>
             </div>
 
@@ -143,11 +148,11 @@
                     <span>3.</span> Working Drawings & Documentation
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Detailed architectural working drawings[span_12](start_span)[span_12](end_span)</li>
-                    <li>Floor plans, sections and elevations[span_13](start_span)[span_13](end_span)</li>
-                    <li>Door, window schedules & Staircase details[span_14](start_span)[span_14](end_span)</li>
-                    <li>Toilet and kitchen details[span_15](start_span)[span_15](end_span)</li>
-                    <li>Electrical and plumbing layouts (DWG & PDF)[span_16](start_span)[span_16](end_span)</li>
+                    <li>Detailed architectural working drawings</li>
+                    <li>Floor plans, sections and elevations</li>
+                    <li>Door, window schedules & Staircase details</li>
+                    <li>Toilet and kitchen details</li>
+                    <li>Electrical and plumbing layouts (DWG & PDF)</li>
                 </ul>
             </div>
 
@@ -157,11 +162,11 @@
                     <span>4.</span> Municipal Drawings & Approval
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Municipal submission drawings[span_17](start_span)[span_17](end_span)</li>
-                    <li>Building proposal drawings as per local regulations[span_18](start_span)[span_18](end_span)</li>
-                    <li>Development Plan (DP) and site layout drawings[span_19](start_span)[span_19](end_span)</li>
-                    <li>FSI / FAR and building area statements[span_20](start_span)[span_20](end_span)</li>
-                    <li>UDCPR / local DCR compliance coordination[span_21](start_span)[span_21](end_span)</li>
+                    <li>Municipal submission drawings</li>
+                    <li>Building proposal drawings as per local regulations</li>
+                    <li>Development Plan (DP) and site layout drawings</li>
+                    <li>FSI / FAR and building area statements</li>
+                    <li>UDCPR / local DCR compliance coordination</li>
                 </ul>
             </div>
 
@@ -171,11 +176,11 @@
                     <span>5.</span> Interior Design
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>Residential and commercial interior design[span_22](start_span)[span_22](end_span)</li>
-                    <li>Living room, bedroom and kitchen design[span_23](start_span)[span_23](end_span)</li>
-                    <li>Modular kitchen and wardrobe design[span_24](start_span)[span_24](end_span)</li>
-                    <li>False ceiling and lighting design[span_25](start_span)[span_25](end_span)</li>
-                    <li>Wall treatments, wallpapers, textures & detailed drawings[span_26](start_span)[span_26](end_span)</li>
+                    <li>Residential and commercial interior design</li>
+                    <li>Living room, bedroom and kitchen design</li>
+                    <li>Modular kitchen and wardrobe design</li>
+                    <li>False ceiling and lighting design</li>
+                    <li>Wall treatments, wallpapers, textures & detailed drawings</li>
                 </ul>
             </div>
 
@@ -185,11 +190,11 @@
                     <span>6.</span> Structural & Consultant Coordination
                 </h3>
                 <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside">
-                    <li>RCC drawing coordination[span_27](start_span)[span_27](end_span)</li>
-                    <li>Architectural and structural drawing coordination[span_28](start_span)[span_28](end_span)</li>
-                    <li>Coordination with structural engineers[span_29](start_span)[span_29](end_span)</li>
-                    <li>Coordination for electrical, plumbing and HVAC services[span_30](start_span)[span_30](end_span)</li>
-                    <li>Drawing review and revision coordination[span_31](start_span)[span_31](end_span)</li>
+                    <li>RCC drawing coordination</li>
+                    <li>Architectural and structural drawing coordination</li>
+                    <li>Coordination with structural engineers</li>
+                    <li>Coordination for electrical, plumbing and HVAC services</li>
+                    <li>Drawing review and revision coordination</li>
                 </ul>
             </div>
 
@@ -200,19 +205,19 @@
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
                     <ul class="space-y-1.5 list-disc list-inside">
-                        <li>Planning-to-execution support[span_32](start_span)[span_32](end_span)</li>
-                        <li>Site visits and progress monitoring[span_33](start_span)[span_33](end_span)</li>
-                        <li>Contractor coordination[span_34](start_span)[span_34](end_span)</li>
-                        <li>Material selection and specifications[span_35](start_span)[span_35](end_span)</li>
+                        <li>Planning-to-execution support</li>
+                        <li>Site visits and progress monitoring</li>
+                        <li>Contractor coordination</li>
+                        <li>Material selection and specifications</li>
                     </ul>
                     <ul class="space-y-1.5 list-disc list-inside">
-                        <li>Drawing clarifications at site[span_36](start_span)[span_36](end_span)</li>
-                        <li>Design implementation support[span_37](start_span)[span_37](end_span)</li>
-                        <li>Quality and design-intent coordination[span_38](start_span)[span_38](end_span)</li>
+                        <li>Drawing clarifications at site</li>
+                        <li>Design implementation support</li>
+                        <li>Quality and design-intent coordination</li>
                     </ul>
                 </div>
                 <p class="text-[10px] text-gray-400 italic mt-3 border-t border-slate-800 pt-2">
-                    * Note: Services are provided according to the agreed project scope and applicable local requirements.[span_39](start_span)[span_39](end_span)
+                    * Note: Services are provided according to the agreed project scope and applicable local requirements.
                 </p>
             </div>
         </div>
@@ -286,8 +291,8 @@
         </div>
     </section>
 
-    <!-- 100% VISIBLE WHATSAPP CONSULTATION FORM -->    <!-- 100% VISIBLE WHATSAPP CONSULTATION FORM -->
-    <section id="consult-box" class="max-w-xl mx-auto px-5 pt-6 pb-20 relative z-20">
+    <!-- 100% WORKING DIRECT WHATSAPP CONSULTATION FORM -->
+    <section id="consult-box" class="max-w-xl mx-auto px-5 pt-6 pb-28 relative z-20">
         <div class="bg-slate-900 border-2 border-amber-400 p-6 rounded-3xl shadow-2xl">
             <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Instant Project Consultation</h2>
             <p class="text-xs text-center text-gray-300 mb-5">
@@ -297,13 +302,13 @@
             <div class="space-y-4">
                 <div>
                     <label class="block text-xs text-amber-300 font-bold mb-1">FULL NAME & LOCATION / CITY</label>
-                    <input type="text" id="custName" placeholder="e.g. Ritesh Nehale Pachod" 
+                    <input type="text" id="custName" placeholder="e.g. Rahul Patil - Pachod" 
                            class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
                 </div>
 
                 <div>
                     <label class="block text-xs text-amber-300 font-bold mb-1">MOBILE / WHATSAPP NUMBER</label>
-                    <input type="tel" id="custPhone" placeholder="e.g. 7755958849" 
+                    <input type="tel" id="custPhone" placeholder="e.g. 9876543210" 
                            class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
                 </div>
 
@@ -322,37 +327,4 @@
                     </select>
                 </div>
 
-                <!-- GUARANTEED VISIBLE SEND BUTTON -->
-                <div class="pt-2 pb-6">
-                    <button type="button" onclick="sendToWhatsApp()" 
-                            class="w-full gold-gradient py-4 rounded-xl shadow-2xl text-sm font-black uppercase tracking-wider block text-center cursor-pointer border-2 border-white/40">
-                        🚀 SEND WHATSAPP INQUIRY NOW
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="consult-box" class="max-w-xl mx-auto px-5 py-6 relative z-20">
-        <div class="bg-slate-900 border-2 border-amber-400 p-6 rounded-3xl shadow-2xl">
-            <h2 class="font-luxury text-xl font-bold text-center gold-text mb-1">Instant Project Consultation</h2>
-            <p class="text-xs text-center text-gray-300 mb-5">
-                Fill the details below to initiate direct WhatsApp consultation with Ritesh Nehale.
-            </p>
-
-            <form onsubmit="event.preventDefault(); sendToWhatsApp();" class="space-y-4">
-                <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">FULL NAME & LOCATION / CITY</label>
-                    <input type="text" id="custName" placeholder="e.g. Ritesh Nehale Pachod" required
-                           class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
-                </div>
-
-                <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">MOBILE / WHATSAPP NUMBER</label>
-                    <input type="tel" id="custPhone" placeholder="e.g. 7755958849" required
-                           class="w-full bg-slate-800 border border-amber-400/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block font-medium">
-                </div>
-
-                <div>
-                    <label class="block text-xs text-amber-300 font-bold mb-1">REQUESTED SERVICE</label>
-    
+            
