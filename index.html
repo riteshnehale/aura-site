@@ -3,896 +3,598 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURA Studio | Architecture & Structure</title>
+<title>AURA STUDIO | Architecture & Structure</title>
+<meta name="description" content="AURA Studio - Architectural Planning, Interior Design, Structural Planning and Project Coordination.">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --gold:#b68a32;
-  --gold2:#e4c66d;
-  --ink:#202a27;
-  --muted:#65716b;
   --cream:#f5f1e7;
-  --paper:#fffdf7;
-  --line:#e5dcc8;
+  --white:#fffdf8;
+  --green:#263b32;
+  --gold:#c6a34b;
+  --text:#68736c;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 
 body{
-  margin:0;
   background:var(--cream);
-  color:var(--ink);
-  font-family:"Plus Jakarta Sans",Arial,sans-serif;
+  color:var(--green);
+  font-family:'DM Sans',sans-serif;
 }
 
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 
-.topbar{
+header{
   position:sticky;
   top:0;
-  z-index:20;
-  background:rgba(255,253,247,.95);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  max-width:1180px;
-  margin:auto;
-  padding:13px 22px;
+  z-index:1000;
+  background:rgba(255,253,248,.97);
+  border-bottom:1px solid #e8e1d2;
+  padding:14px 5%;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:18px;
+  align-items:center;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.brand-mark{
-  width:48px;
-  height:48px;
+.logo-mark{
+  width:55px;height:55px;
   border-radius:50%;
   display:grid;
   place-items:center;
-  background:linear-gradient(135deg,#f7e8a1,#b88c35);
-  color:#17201d;
-  font-family:Cinzel,serif;
-  font-size:25px;
-  font-weight:700;
+  background:linear-gradient(135deg,#f2df9b,#b58c31);
+  color:#263b32;
+  font-family:'Playfair Display',serif;
+  font-size:35px;
 }
 
-.brand-name{
-  font:700 21px Cinzel,serif;
-  letter-spacing:.04em;
+.logo h2{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
 }
 
-.brand-sub{
-  display:block;
-  font-size:10px;
-  letter-spacing:.16em;
-  color:#8c6b2e;
-  margin-top:3px;
+.logo p{
+  font-size:11px;
+  letter-spacing:2px;
+  color:#887344;
+  margin-top:4px;
 }
 
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  font-size:13px;
-  font-weight:700;
-}
-
-.nav-actions{
-  display:flex;
-  gap:9px;
-  align-items:center;
-}
+.header-actions{display:flex;gap:10px}
 
 .btn{
-  border:0;
-  border-radius:999px;
-  padding:13px 21px;
-  font-weight:800;
+  display:inline-block;
+  padding:15px 23px;
+  border-radius:40px;
+  border:1px solid var(--gold);
+  font-weight:700;
+  text-align:center;
   cursor:pointer;
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
 }
 
 .btn-gold{
-  background:linear-gradient(120deg,#e9d27d,#b78a32);
-  color:#1e241e;
+  background:linear-gradient(120deg,#f0d98c,#b99035);
+  color:#1f2d26;
+  border:none;
 }
 
-.btn-outline{
-  border:1px solid var(--gold);
-  color:#6d5424;
-  background:transparent;
-}
-
-/* HERO BACKGROUND SLIDESHOW */
+.btn-outline{background:transparent}
 
 .hero{
+  min-height:690px;
   position:relative;
-  min-height:650px;
   display:flex;
   align-items:center;
   overflow:hidden;
-  background:#d9d4c8;
+  background:linear-gradient(90deg,rgba(24,43,35,.88),rgba(24,43,35,.3));
+  color:white;
+  padding:90px 9%;
 }
 
-.hero-slides{
+.hero video{
   position:absolute;
   inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
 
-.hero-slides:after{
+.hero:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(20,31,28,.72),
-    rgba(20,31,28,.34) 56%,
-    rgba(20,31,28,.12)
-  );
+  background:linear-gradient(90deg,rgba(20,39,31,.85),rgba(20,39,31,.3));
+  z-index:-1;
 }
 
-.slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.035);
-  transition:opacity 1s ease,transform 2.2s ease;
-}
-
-.slide.active{
-  opacity:1;
-  transform:scale(1);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:1180px;
-  width:100%;
-  margin:auto;
-  padding:90px 24px;
-  color:white;
-}
+.hero-content{max-width:700px}
 
 .eyebrow{
-  font-size:12px;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:#f0d98c;
-  font-weight:800;
+  color:#e4ca7b;
+  letter-spacing:4px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:25px;
 }
 
-h1{
-  font:600 clamp(42px,7vw,78px)/1.08 Cinzel,serif;
-  max-width:780px;
-  margin:18px 0;
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+}
+
+.hero h1{
+  font-size:clamp(48px,8vw,82px);
+  line-height:1.04;
+  margin-bottom:25px;
 }
 
 .hero p{
-  max-width:610px;
+  font-size:19px;
   line-height:1.8;
-  font-size:16px;
-  color:#f3f0e8;
+  color:#eee9dc;
+  max-width:600px;
+  margin-bottom:35px;
 }
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:28px;
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+
+section{padding:95px 7%}
+
+.section-heading{text-align:center;margin-bottom:55px}
+
+.section-heading span{
+  color:#9b7d3d;
+  letter-spacing:4px;
+  font-weight:700;
+  font-size:13px;
 }
 
-.hero .btn-outline{
-  color:white;
-  border-color:#e5c66c;
-  background:rgba(20,30,27,.22);
+.section-heading h2{
+  font-size:clamp(35px,5vw,52px);
+  margin:15px 0;
 }
 
-.slide-dots{
-  position:absolute;
-  z-index:3;
-  bottom:25px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:9px;
+.section-heading p{
+  color:var(--text);
+  font-size:18px;
+  line-height:1.7;
 }
 
-.dot{
-  width:9px;
-  height:9px;
-  border:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.55);
-  padding:0;
-  cursor:pointer;
-}
-
-.dot.active{
-  background:#f0d47d;
-  width:27px;
-  border-radius:8px;
-}
-
-section{padding:78px 22px}
-
-.wrap{
-  max-width:1120px;
+.about-intro{
+  max-width:850px;
   margin:auto;
-}
-
-.section-kicker{
   text-align:center;
-  color:#9a742e;
-  font-weight:800;
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+  font-size:20px;
+  line-height:1.9;
+  color:var(--text);
 }
 
-h2{
-  font:600 clamp(30px,4vw,45px) Cinzel,serif;
-  text-align:center;
-  margin:12px 0 14px;
-  color:#26332d;
-}
-
-.section-intro{
-  text-align:center;
-  color:var(--muted);
-  max-width:700px;
-  margin:0 auto 38px;
-  line-height:1.8;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-}
-
-.about-card,.person,.service,.form-card,.contact-card{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:0 12px 35px rgba(69,56,30,.06);
+.about-card,.person-card,.service-card,.project-card,.form-card{
+  background:var(--white);
+  border:1px solid #e9e2d4;
+  border-radius:28px;
+  box-shadow:0 12px 35px rgba(40,50,40,.04);
 }
 
 .about-card{
-  padding:30px;
-  line-height:1.85;
-  color:#58645d;
+  max-width:850px;
+  margin:45px auto;
+  padding:45px;
+  font-size:18px;
+  line-height:1.9;
+  color:var(--text);
 }
 
-.people{
+.team{
+  max-width:850px;
+  margin:auto;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.person{padding:25px}
-
-.person strong{
-  display:block;
-  font:600 18px Cinzel,serif;
-  color:#344039;
-  margin-bottom:8px;
-}
-
-.person span{
-  font-size:12px;
-  color:#8b6b2e;
-  font-weight:800;
-  letter-spacing:.08em;
-}
-
-.services{background:#eee8d9}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.service{
-  padding:24px;
-  min-height:150px;
-}
-
-.service .num{
-  font:600 22px Cinzel,serif;
-  color:#b28a3e;
-}
-
-.service h3{
-  font-size:16px;
-  margin:13px 0 7px;
-}
-
-.service p{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.7;
-  margin:0;
-}
-
-/* GALLERY */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
   gap:20px;
 }
 
-.gallery-item{
-  position:relative;
-  border:0;
-  padding:0;
-  background:#ddd;
-  border-radius:16px;
+.person-card{padding:30px}
+
+.person-card h3{font-size:24px;margin-bottom:12px}
+.person-card p{color:#94773e;font-weight:700;letter-spacing:1px}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.service-card{padding:32px}
+
+.service-number{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.service-card h3{
+  font-family:'DM Sans',sans-serif;
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+.service-card p{color:var(--text);line-height:1.8}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.project-card{
   overflow:hidden;
   cursor:pointer;
-  min-height:250px;
-  text-align:left;
-  box-shadow:0 10px 28px rgba(40,35,20,.12);
 }
 
-.gallery-item img{
-  width:100%;
-  height:100%;
-  min-height:290px;
+.project-card img{
   display:block;
+  width:100%;
+  height:260px;
   object-fit:cover;
-  transition:transform .5s;
+  transition:.5s;
 }
 
-.gallery-item:hover img{
-  transform:scale(1.04);
+.project-card:hover img{transform:scale(1.05)}
+
+.project-card h3{
+  padding:18px;
+  font-size:19px;
 }
 
-.gallery-label{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:18px 20px;
-  color:#fff;
-  background:linear-gradient(transparent,rgba(0,0,0,.72));
-  font-weight:800;
-}
-
-.pdf-tile{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:14px;
-  min-height:290px;
-  background:linear-gradient(135deg,#fffdf6,#e9dfc7);
-  color:#344039;
-  border:1px solid #d8c69c;
-  border-radius:16px;
+.portfolio-box{
+  max-width:850px;
+  margin:auto;
   text-align:center;
-  padding:25px;
+  padding:55px 30px;
+  background:var(--green);
+  color:white;
+  border-radius:30px;
 }
 
-.pdf-icon{
-  width:66px;
-  height:78px;
-  border:2px solid #b78b37;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  color:#a77825;
-  font-weight:800;
-  font-size:20px;
-  background:#fffaf0;
-}
-
-.pdf-tile strong{
-  font:600 19px Cinzel,serif;
-}
-
-.pdf-tile span{
-  font-size:13px;
-  color:#69746d;
-}
-
-.pdf-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-/* INQUIRY FORM */
-
-.inquiry{background:#eee8d9}
+.portfolio-box h2{font-size:38px;margin-bottom:15px}
+.portfolio-box p{color:#e4e2d8;line-height:1.8;margin-bottom:25px}
 
 .form-card{
-  max-width:780px;
+  max-width:800px;
   margin:auto;
-  padding:32px;
+  padding:40px;
 }
 
 .form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:19px;
+  gap:20px;
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-}
+.field{margin-bottom:20px}
 
-.field.full{grid-column:1/-1}
-
-label{
-  font-size:12px;
-  font-weight:800;
-  color:#856323;
-  letter-spacing:.04em;
-}
-
-input,select{
-  width:100%;
-  padding:17px 16px;
-  border:1.5px solid #c5a45d;
-  border-radius:12px;
-  background:#fffdf8;
-  color:#26332d;
-  outline:none;
-}
-
-input:focus,select:focus{
-  border-color:#8d6824;
-  box-shadow:0 0 0 3px rgba(182,138,50,.13);
-}
-
-.submit{
-  width:100%;
-  margin-top:24px;
-  padding:18px;
-  border-radius:13px;
-  font-size:16px;
-}
-
-.form-note{
-  text-align:center;
-  color:#707970;
-  font-size:12px;
-  line-height:1.7;
-  margin:14px 0 0;
-}
-
-/* CONTACT */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.contact-card{
-  padding:23px;
-  text-align:center;
-}
-
-.contact-card b{
+.field label{
   display:block;
-  color:#8a6729;
-  margin-bottom:8px;
+  margin-bottom:9px;
+  font-weight:600;
 }
 
-.contact-card span{
-  font-size:14px;
-  color:#526057;
-}
-
-footer{
-  background:#34413a;
-  color:#f5f1e7;
-  text-align:center;
-  padding:25px 18px;
-  font-size:12px;
-  line-height:1.8;
-}
-
-/* FULL SCREEN IMAGE VIEW */
-
-.lightbox{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:50;
-  background:rgba(15,20,18,.92);
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-}
-
-.lightbox.open{display:flex}
-
-.lightbox img{
-  max-width:94vw;
-  max-height:88vh;
-  object-fit:contain;
-  border-radius:8px;
-}
-
-.lightbox-close{
-  position:absolute;
-  top:18px;
-  right:22px;
+.field input,.field select{
+  width:100%;
+  padding:16px;
+  border:1px solid #ddd5c5;
+  border-radius:12px;
   background:#fff;
-  color:#222;
+  font:inherit;
+  color:var(--green);
+}
+
+.full{grid-column:1/-1}
+
+.submit-btn{
+  width:100%;
+  padding:18px;
   border:0;
-  border-radius:50%;
-  width:42px;
-  height:42px;
-  font-size:25px;
+  border-radius:40px;
+  background:linear-gradient(120deg,#f0d98c,#b99035);
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
 }
 
-/* MOBILE RESPONSIVE */
-
-@media(max-width:800px){
-  .nav-links{display:none}
-  .hero{min-height:590px}
-  .about-grid{grid-template-columns:1fr}
-  .service-grid{grid-template-columns:repeat(2,1fr)}
-  .contact-grid{grid-template-columns:1fr}
-  .brand-name{font-size:18px}
+.contact{
+  background:#eae4d5;
+  text-align:center;
 }
 
-@media(max-width:560px){
-  .nav{padding:10px 13px}
-  .brand-mark{width:41px;height:41px}
-  .brand-name{font-size:16px}
-  .brand-sub{font-size:8px}
-  .nav-actions .btn{padding:11px 13px;font-size:12px}
-  .hero-content{padding:75px 20px}
-  .hero p{font-size:14px}
-  section{padding:58px 15px}
-  .service-grid,.gallery-grid,.form-grid,.people{
-    grid-template-columns:1fr;
-  }
-  .form-card{padding:21px 16px}
-  .gallery-item img{min-height:220px}
-  .field.full{grid-column:auto}
+.contact h2{font-size:42px;margin-bottom:20px}
+.contact p{color:var(--text);margin-bottom:25px}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+footer{
+  background:#263b32;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+  line-height:1.8;
+}
+
+footer span{color:#dfc477}
+
+@media(max-width:700px){
+  header{padding:12px 4%}
+  .logo-mark{width:48px;height:48px;font-size:29px}
+  .logo h2{font-size:18px}
+  .logo p{font-size:9px;letter-spacing:1.4px}
+  .header-actions{gap:7px}
+  .header-actions .btn{padding:12px 14px;font-size:13px}
+  .hero{min-height:690px;padding:75px 9%}
+  .hero p{font-size:17px}
+  section{padding:75px 6%}
+  .team,.services-grid,.form-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;gap:12px}
+  .project-card img{height:170px}
+  .project-card h3{font-size:15px;padding:12px}
+  .about-card,.form-card{padding:25px}
+  .portfolio-box h2{font-size:32px}
 }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
-<nav class="nav">
+<header>
+  <a href="#home" class="logo">
+    <div class="logo-mark">A</div>
+    <div>
+      <h2>AURA STUDIO</h2>
+      <p>ARCHITECTURE & STRUCTURE</p>
+    </div>
+  </a>
 
-<a class="brand" href="#home">
-  <span class="brand-mark">A</span>
-  <span>
-    <span class="brand-name">AURA STUDIO</span>
-    <span class="brand-sub">ARCHITECTURE &amp; STRUCTURE</span>
-  </span>
-</a>
-
-<div class="nav-links">
-  <a href="#about">ABOUT</a>
-  <a href="#services">SERVICES</a>
-  <a href="#gallery">PROJECTS</a>
-  <a href="#contact">CONTACT</a>
-</div>
-
-<div class="nav-actions">
-  <a class="btn btn-outline" href="tel:+918668850065">CALL</a>
-  <a class="btn btn-gold" href="#inquiry">INQUIRE</a>
-</div>
-
-</nav>
+  <div class="header-actions">
+    <a class="btn btn-outline" href="tel:+918668850065">CALL</a>
+    <a class="btn btn-gold" href="#inquiry">INQUIRE</a>
+  </div>
 </header>
 
-<main>
-
-<!-- HERO -->
-
+<!-- HOME -->
 <section class="hero" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="bg-video.mp4" type="video/mp4">
+  </video>
 
-<div class="hero-slides" aria-hidden="true">
-
-  <div class="slide active"
-       style="background-image:url('assets/restaurant-interior-1.jpg')">
+  <div class="hero-content">
+    <div class="eyebrow">ARCHITECTURE • INTERIORS • STRUCTURAL PLANNING</div>
+    <h1>Spaces Designed For Better Living.</h1>
+    <p>
+      Thoughtful architecture and refined interiors, shaped around your vision.
+      From planning to execution, AURA Studio brings clarity, function and
+      character to every space.
+    </p>
+    <div class="hero-buttons">
+      <a href="#inquiry" class="btn btn-gold">START YOUR PROJECT</a>
+      <a href="#gallery" class="btn btn-outline" style="color:white">EXPLORE PROJECTS</a>
+    </div>
   </div>
-
-  <div class="slide"
-       style="background-image:url('assets/restaurant-interior-2.jpg')">
-  </div>
-
-</div>
-
-<div class="hero-content">
-
-  <div class="eyebrow">
-    Architecture • Interiors • Structural Planning
-  </div>
-
-  <h1>Spaces Designed<br>For Better Living.</h1>
-
-  <p>
-    Thoughtful architecture and refined interiors, shaped around your vision.
-    From planning to execution, AURA Studio brings clarity, function and
-    character to every space.
-  </p>
-
-  <div class="hero-buttons">
-    <a class="btn btn-gold" href="#inquiry">START YOUR PROJECT</a>
-    <a class="btn btn-outline" href="#gallery">EXPLORE PROJECTS</a>
-  </div>
-
-</div>
-
-<div class="slide-dots">
-  <button class="dot active" aria-label="Show image 1"></button>
-  <button class="dot" aria-label="Show image 2"></button>
-</div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
+  <div class="section-heading">
+    <span>WHO WE ARE</span>
+    <h2>Design With Purpose</h2>
+  </div>
 
-<div class="wrap">
-
-  <div class="section-kicker">Who We Are</div>
-  <h2>Design With Purpose</h2>
-
-  <p class="section-intro">
-    AURA Architectural Studio &amp; Structural Planners brings design thinking
+  <div class="about-intro">
+    AURA Architectural Studio & Structural Planners brings design thinking
     and technical planning together to create meaningful spaces.
-  </p>
+  </div>
 
-  <div class="about-grid">
+  <div class="about-card">
+    We approach every project with attention to its context, function and
+    long-term value. Our work combines architectural planning, interior
+    design and structural coordination to help clients move from an
+    initial idea to a considered, buildable space.
+  </div>
 
-    <div class="about-card">
-      We approach every project with attention to its context, function and
-      long-term value. Our work combines architectural planning, interior
-      design and structural coordination to help clients move from an initial
-      idea to a considered, buildable space.
+  <div class="team">
+    <div class="person-card">
+      <h3>Ar. Vaishnavi Huljute</h3>
+      <p>PRINCIPAL ARCHITECT</p>
     </div>
-
-    <div class="people">
-
-      <div class="person">
-        <strong>Ar. Vaishnavi Huljute</strong>
-        <span>PRINCIPAL ARCHITECT</span>
-      </div>
-
-      <div class="person">
-        <strong>Ritesh Nehale</strong>
-        <span>MANAGING PARTNER</span>
-      </div>
-
+    <div class="person-card">
+      <h3>Ritesh Nehale</h3>
+      <p>MANAGING PARTNER</p>
     </div>
   </div>
-</div>
 </section>
 
 <!-- SERVICES -->
-
-<section class="services" id="services">
-
-<div class="wrap">
-
-  <div class="section-kicker">What We Do</div>
-  <h2>Our Services</h2>
-
-  <p class="section-intro">
-    Integrated design and planning services for residential and commercial projects.
-  </p>
-
-  <div class="service-grid">
-
-    <article class="service">
-      <div class="num">01</div>
-      <h3>Architectural Design</h3>
-      <p>Concept development, space planning and architectural design.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">02</div>
-      <h3>Structural Planning</h3>
-      <p>Structural planning and coordination for practical, buildable designs.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">03</div>
-      <h3>Interior Design</h3>
-      <p>Interior concepts, materials, finishes and furniture planning.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">04</div>
-      <h3>3D Elevation &amp; Visualization</h3>
-      <p>Visual presentations to help communicate the design direction.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">05</div>
-      <h3>Planning &amp; Permissions</h3>
-      <p>Drawing preparation and planning support for project requirements.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">06</div>
-      <h3>Renovation &amp; Remodeling</h3>
-      <p>Reworking existing spaces to improve function and experience.</p>
-    </article>
-
-    <article class="service">
-      <div class="num">07</div>
-      <h3>Project Execution &amp; Site Coordination</h3>
-      <p>Design coordination and support through project execution.</p>
-    </article>
-
+<section id="services" style="background:#eee8d9">
+  <div class="section-heading">
+    <span>WHAT WE DO</span>
+    <h2>Our Services</h2>
+    <p>Integrated design and planning services for residential and commercial projects.</p>
   </div>
-</div>
-</section>
 
-<!-- GALLERY + PDF -->
+  <div class="services-grid">
 
-<section id="gallery">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <h3>Architectural Planning & Design</h3>
+      <p>Concept development, space planning and architectural design.</p>
+    </div>
 
-<div class="wrap">
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <h3>3D Visualization & Rendering</h3>
+      <p>Visual representation of design concepts and proposed spaces.</p>
+    </div>
 
-  <div class="section-kicker">Selected Work</div>
-  <h2>Project Gallery</h2>
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <h3>Working Drawings & Technical Documentation</h3>
+      <p>Detailed drawings and technical documentation for projects.</p>
+    </div>
 
-  <p class="section-intro">
-    Tap either image to view it full size. The project PDF is available separately below.
-  </p>
+    <div class="service-card">
+      <div class="service-number">04</div>
+      <h3>Municipal Drawings & Approval Support</h3>
+      <p>Drawing preparation and support for the approval process.</p>
+    </div>
 
-  <div class="gallery-grid">
+    <div class="service-card">
+      <div class="service-number">05</div>
+      <h3>Interior Design</h3>
+      <p>Interior planning and design for functional, considered spaces.</p>
+    </div>
 
-    <button class="gallery-item"
-      data-image="assets/restaurant-interior-1.jpg"
-      aria-label="Open restaurant interior image one">
+    <div class="service-card">
+      <div class="service-number">06</div>
+      <h3>Structural & Consultant Coordination</h3>
+      <p>Coordination with structural and other project consultants.</p>
+    </div>
 
-      <img src="assets/restaurant-interior-1.jpg"
-        alt="Restaurant interior with timber, green seating and large windows">
-
-      <span class="gallery-label">
-        Restaurant Interior — View Full Image
-      </span>
-    </button>
-
-    <button class="gallery-item"
-      data-image="assets/restaurant-interior-2.jpg"
-      aria-label="Open restaurant interior image two">
-
-      <img src="assets/restaurant-interior-2.jpg"
-        alt="Restaurant interior with arched wall details and timber finishes">
-
-      <span class="gallery-label">
-        Restaurant Interior — View Full Image
-      </span>
-    </button>
-
-    <div class="pdf-tile">
-
-      <div class="pdf-icon">PDF</div>
-
-      <strong>Project Presentation</strong>
-
-      <span>JAYPURIYA OP4 — 20-page project PDF</span>
-
-      <div class="pdf-actions">
-
-        <a class="btn btn-gold"
-          href="assets/JAYPURIYA-OP4-Project-PDF.pdf"
-          target="_blank" rel="noopener">
-          OPEN PDF
-        </a>
-
-        <a class="btn btn-outline"
-          href="assets/JAYPURIYA-OP4-Project-PDF.pdf"
-          download>
-          DOWNLOAD PDF
-        </a>
-
-      </div>
+    <div class="service-card">
+      <div class="service-number">07</div>
+      <h3>Project Execution & Site Coordination</h3>
+      <p>Project execution support and site coordination.</p>
     </div>
 
   </div>
-</div>
 </section>
 
-<!-- INQUIRY FORM -->
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-heading">
+    <span>SELECTED WORK</span>
+    <h2>Project Gallery</h2>
+    <p>A glimpse into architectural and interior design work.</p>
+  </div>
 
-<section class="inquiry" id="inquiry">
+  <div class="gallery">
 
-<div class="wrap">
+    <div class="project-card">
+      <img src="1.png" alt="Architecture project" loading="lazy">
+      <h3>Architecture Project</h3>
+    </div>
 
-  <div class="section-kicker">Let’s Discuss</div>
-  <h2>Project Inquiry</h2>
+    <div class="project-card">
+      <img src="2.png" alt="Interior design project" loading="lazy">
+      <h3>Interior Design</h3>
+    </div>
 
-  <p class="section-intro">
-    Share the basic project details. WhatsApp will open with your message ready to send.
-  </p>
+    <div class="project-card">
+      <img src="3_1.png" alt="Interior project" loading="lazy">
+      <h3>Interior Space</h3>
+    </div>
+
+    <div class="project-card">
+      <img src="3_2.png" alt="Interior project" loading="lazy">
+      <h3>Designed Spaces</h3>
+    </div>
+
+    <div class="project-card">
+      <img src="4.png" alt="Design project" loading="lazy">
+      <h3>Design Project</h3>
+    </div>
+
+    <div class="project-card">
+      <img src="6.png" alt="Architecture project" loading="lazy">
+      <h3>Selected Project</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO PDF -->
+<section style="padding-top:20px">
+  <div class="portfolio-box">
+    <div class="eyebrow">PROJECT PORTFOLIO</div>
+    <h2>Explore Our Work</h2>
+    <p>
+      View the project portfolio and explore selected interior
+      design spaces and project details.
+    </p>
+    <a class="btn btn-gold"
+       href="JAYPURIYA%20OP4_removed.pdf"
+       target="_blank" rel="noopener">
+       OPEN PORTFOLIO PDF
+    </a>
+  </div>
+</section>
+
+<!-- INQUIRY -->
+<section id="inquiry" style="background:#eee8d9">
+  <div class="section-heading">
+    <span>LET'S DISCUSS</span>
+    <h2>Start Your Project</h2>
+    <p>Share your basic project details with AURA Studio.</p>
+  </div>
 
   <form class="form-card" id="inquiryForm">
 
     <div class="form-grid">
 
       <div class="field">
-        <label for="name">1. FULL NAME *</label>
-        <input id="name" name="name" type="text"
-          placeholder="Enter your full name" required>
+        <label for="name">Your Name *</label>
+        <input id="name" name="name" type="text" required placeholder="Enter your name">
       </div>
 
       <div class="field">
-        <label for="location">2. PROJECT LOCATION *</label>
-        <input id="location" name="location" type="text"
-          placeholder="Enter project location" required>
+        <label for="mobile">Mobile Number *</label>
+        <input id="mobile" name="mobile" type="tel" required
+               pattern="[0-9+\-\s]{10,15}" placeholder="Enter mobile number">
       </div>
 
       <div class="field">
-        <label for="mobile">3. MOBILE / WHATSAPP NUMBER *</label>
-        <input id="mobile" name="mobile" type="tel"
-          inputmode="numeric"
-          pattern="[0-9+\-\s]{10,15}"
-          placeholder="Enter 10-digit mobile number" required>
+        <label for="location">Project Location *</label>
+        <input id="location" name="location" type="text" required placeholder="City / Location">
       </div>
 
       <div class="field">
-        <label for="service">4. REQUESTED SERVICE *</label>
-
+        <label for="service">Required Service *</label>
         <select id="service" name="service" required>
-          <option value="">Select Service</option>
-          <option>Architectural Design</option>
-          <option>Structural Planning</option>
+          <option value="">Select a service</option>
+          <option>Architectural Planning & Design</option>
+          <option>3D Visualization & Rendering</option>
+          <option>Working Drawings & Technical Documentation</option>
+          <option>Municipal Drawings & Approval Support</option>
           <option>Interior Design</option>
-          <option>3D Elevation &amp; Visualization</option>
-          <option>Planning &amp; Permissions</option>
-          <option>Renovation &amp; Remodeling</option>
-          <option>Project Execution &amp; Site Coordination</option>
+          <option>Structural & Consultant Coordination</option>
+          <option>Project Execution & Site Coordination</option>
         </select>
       </div>
 
       <div class="field">
-        <label for="plot">5. PLOT SIZE</label>
-        <input id="plot" name="plot" type="text"
-          placeholder="Example: 30 x 60 feet">
+        <label for="plot">Plot Size *</label>
+        <input id="plot" name="plot" type="text" required placeholder="Example: 30 x 60 ft">
       </div>
 
       <div class="field">
-        <label for="budget">6. PROJECT BUDGET</label>
-
-        <select id="budget" name="budget">
-          <option value="">Select Budget</option>
+        <label for="budget">Approximate Budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="">Select your budget</option>
           <option>Below ₹10 Lakhs</option>
-          <option>₹10–25 Lakhs</option>
-          <option>₹25–50 Lakhs</option>
-          <option>₹50 Lakhs–1 Crore</option>
+          <option>₹10 – 25 Lakhs</option>
+          <option>₹25 – 50 Lakhs</option>
+          <option>₹50 Lakhs – 1 Crore</option>
           <option>Above ₹1 Crore</option>
           <option>To be discussed</option>
         </select>
@@ -900,134 +602,70 @@ footer{
 
     </div>
 
-    <button class="btn btn-gold submit" type="submit">
-      SEND PROJECT DETAILS ON WHATSAPP
+    <button type="submit" class="submit-btn">
+      SEND INQUIRY ON WHATSAPP
     </button>
 
-    <p class="form-note" id="formStatus">
-      WhatsApp opens with the details above. Press Send in WhatsApp to complete the inquiry.
-    </p>
-
   </form>
-</div>
 </section>
 
 <!-- CONTACT -->
-
-<section id="contact">
-
-<div class="wrap">
-
-  <div class="section-kicker">Get In Touch</div>
-  <h2>Let’s Build Something Thoughtful</h2>
-
-  <p class="section-intro">
-    For project discussions and inquiries, contact AURA Studio.
-  </p>
-
-  <div class="contact-grid">
-
-    <div class="contact-card">
-      <b>PHONE / WHATSAPP</b>
-      <span>+91 8668850065</span>
-    </div>
-
-    <div class="contact-card">
-      <b>STUDIO</b>
-      <span>AURA Architectural Studio &amp; Structural Planners</span>
-    </div>
-
-    <div class="contact-card">
-      <b>PROJECT INQUIRIES</b>
-      <span><a href="#inquiry">Submit the inquiry form</a></span>
-    </div>
-
+<section class="contact" id="contact">
+  <div class="section-heading">
+    <span>GET IN TOUCH</span>
+    <h2>Let's Create Something Meaningful</h2>
   </div>
-</div>
+
+  <p>AURA STUDIO — ARCHITECTURE & STRUCTURE</p>
+  <p>Connect with us to discuss your project.</p>
+
+  <div class="contact-buttons">
+    <a href="tel:+918668850065" class="btn btn-gold">CALL NOW</a>
+    <a href="https://wa.me/918668850065"
+       target="_blank" rel="noopener" class="btn btn-outline">
+       WHATSAPP
+    </a>
+  </div>
 </section>
 
-</main>
-
 <footer>
-© <span id="year"></span> AURA Studio — Architecture &amp; Structure. All rights reserved.
+  <h3>AURA STUDIO</h3>
+  <p>ARCHITECTURE & STRUCTURE</p>
+  <p>Principal Architect: Ar. Vaishnavi Huljute</p>
+  <p>Managing Partner: Ritesh Nehale</p>
+  <p>Contact: +91 8668850065</p>
+  <p>© 2026 <span>AURA STUDIO.</span> All Rights Reserved.</p>
 </footer>
 
-<!-- FULL SCREEN IMAGE LIGHTBOX -->
-
-<div class="lightbox" id="lightbox"
-  role="dialog" aria-modal="true"
-  aria-label="Full-size project image">
-
-  <button class="lightbox-close" id="lightboxClose"
-    aria-label="Close image">×</button>
-
-  <img id="lightboxImage" src="" alt="Full-size project view">
-
-</div>
-
 <script>
+document.getElementById("inquiryForm").addEventListener("submit",function(e){
+  e.preventDefault();
 
-/* BACKGROUND SLIDESHOW - EVERY 2 SECONDS */
+  const name = document.getElementById("name").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const location = document.getElementById("location").value.trim();
+  const service = document.getElementById("service").value;
+  const plot = document.getElementById("plot").value.trim();
+  const budget = document.getElementById("budget").value;
 
-const slides = [...document.querySelectorAll('.slide')];
-const dots = [...document.querySelectorAll('.dot')];
+  const message =
+`Hello AURA Studio,
 
-let currentSlide = 0;
+I would like to inquire about a project.
 
-function showSlide(index) {
+Name: ${name}
+Mobile: ${mobile}
+Project Location: ${location}
+Required Service: ${service}
+Plot Size: ${plot}
+Approximate Budget: ${budget}`;
 
-  currentSlide = index;
+  const whatsappURL =
+    "https://wa.me/918668850065?text=" + encodeURIComponent(message);
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-
-}
-
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => showSlide(i));
+  window.open(whatsappURL,"_blank");
 });
+</script>
 
-setInterval(() => {
-  showSlide((currentSlide + 1) % slides.length);
-}, 2000);
-
-
-/* GALLERY FULL SCREEN IMAGE */
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-
-document.querySelectorAll('.gallery-item').forEach(item => {
-
-  item.addEventListener('click', () => {
-
-    lightboxImage.src = item.dataset.image;
-    lightbox.classList.add('open');
-
-  });
-
-});
-
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  lightboxImage.src = '';
-}
-
-document.getElementById('lightboxClose')
-  .addEventListener('click', closeLightbox);
-
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
-});
-
-
-/* WHATSAPP FORM SUBMISS
+</body>
+  </html>
